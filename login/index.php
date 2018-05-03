@@ -17,7 +17,9 @@
 	}else
 	/**/
 	if($action==1){
-		include("./valida.php");
+		include("./login.php");
+	}elseif($action==2){
+		include("./logout.php");
 	}else{
 		$output = $msg[101];
 	}

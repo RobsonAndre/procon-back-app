@@ -19,9 +19,13 @@
 		$s = "INSERT INTO papiroweb.".PFIX."user_log (uid, token, time) VALUES ('$uid', '$token', '$time')";
 		$r = $Qry->query($s);
 		
-		//inserindo UID e TOKEN no objeto
+		//inserindo info no objeto
 		$msg[110]['uid']        = $uid;
 		$msg[110]['token']      = $token;
+		$msg[110]['nome']       = 'Nome Completo';
+		$msg[110]['imagem']     = '';
+		$msg[110]['sexo']       = 'masculino';
+		$msg[110]['social']     = $social;
 		$msg[110]['verificado'] = false;
 		$msg[110]['cadastro']   = false;
 		
