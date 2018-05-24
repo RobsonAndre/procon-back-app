@@ -4,7 +4,7 @@
 	$Qry  = new Qry; 
 	$c = $Conn->connect(HOST,USER,PASS,DB);
 	//SQL
-	$s = "SELECT uid FROM papiroweb.".PFIX."user_login WHERE email='$email' AND senha='$psw' ";
+	$s = "SELECT uid FROM ".PFIX."user_login WHERE email='$email' AND senha='$senha' ";
 	$r = $Qry->query($s);
 	$l = $Qry->rows($r);
 	if($l){
@@ -16,24 +16,28 @@
 		$token = $tk->geraToken(KEY,$uid,$social,$time); 
 		
 		//inserindo o SUCCESS no user_log
-		$s = "INSERT INTO papiroweb.".PFIX."user_log (uid, token, time) VALUES ('$uid', '$token', '$time')";
+		$s = "INSERT INTO ".PFIX."user_log (uid, token, time) VALUES ('$uid', '$token', '$time')";
 		$r = $Qry->query($s);
 		
 		//inserindo info no objeto
-		$msg[110]['uid']        = $uid;
-		$msg[110]['token']      = $token;
-		$msg[110]['nome']       = 'Nome Completo';
-		$msg[110]['imagem']     = '';
-		$msg[110]['sexo']       = 'masculino';
-		$msg[110]['social']     = $social;
-		$msg[110]['verificado'] = false;
-		$msg[110]['cadastro']   = false;
+		$msg[110]['results']['uid']        = $uid;
+		$msg[110]['results']['token']      = $token;
+		$msg[110]['results']['nome']       = 'Nome Completo';
+		$msg[110]['results']['imagem']     = '';
+		$msg[110]['results']['sexo']       = 'masculino';
+		$msg[110]['results']['social']     = $social;
+		$msg[110]['results']['verificado'] = false;
+		$msg[110]['results']['cadastro']   = false;
 		
 		$output = $msg[110];	
 	}else{
+		//guardando a senha sem criptografia
+		$senha = $_GET['senha'];
 		//inserindo o ERROR no acesso_log_error
-		$s = "INSERT INTO papiroweb.".PFIX."acesso_log_error (email, senha, time) VALUES ('$email', '$senha', '$time')";
+		$s = "INSERT INTO ".PFIX."acesso_log_error (email, senha, time) VALUES ('$email', '$senha', '$time')";
 		$r = $Qry->query($s);
 		$output = $msg[111];
 	}
+	//Desconectando o banco
+	$Conn->desconnect($c);
 ?>

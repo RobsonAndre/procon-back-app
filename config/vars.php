@@ -3,7 +3,14 @@
 	 *	time
 	 *	data e hora no formato timestamp
 	 */
-	$time = time();
+	/*echo '<br />'.*/$time = time();
+	
+	/**
+	 *	validate
+	 *	variavel de controle define se ha algum erro (false) ou se tudo esta ok (true) padrão false
+	 *	bollean
+	 */
+	/*echo '<br />'.*/$validate = false;
 	
 	/**
 	 *	ldias
@@ -11,7 +18,7 @@
 	 *		Apos o limite definido em ldias deve ser solicitado novo login
 	 *		segudos * minutos * horas * dias
 	 */
-	$ldias = 60*60*24*30; //30 dias
+	/*echo '<br />'.*/$ldias = 60*60*24*30; //30 dias
 	
 	/**
 	 *	Action
@@ -22,7 +29,7 @@
 	 *		4 - contar as linhas de registro
 	 *		5 - Selecionar todos os registros
 	 */
-	/*echo '<br />'.*/$action = $_GET['action'];
+	/*echo '<br />'.*/$action = $_GET['action']?$_GET['action']:0;
 	
 	/**
 	 *	email
@@ -30,26 +37,15 @@
 	 *	tipo: string
 	 *  
 	 */
-	/*echo '<br />'.*/$email = $_GET['email']?$_GET['email']:false;
-	if(!filter_var( $email, FILTER_VALIDATE_EMAIL)){
-		$email = false;
-	}
+	/*echo '<br />'.*/$email = $_GET['email']? validaEmail($_GET['email']):false;
 	
 	/**
-	 *	senha
-	 *		palavra chave do usuario
+	 *	psw 
+	 *		palavra chave do usuario (senha) ja criptografada
 	 *	tipo: string
 	 *  
 	 */
-	/*echo '<br />'.*/$senha = $_GET['senha'] ? $_GET['senha'] : false;
-	
-	/**
-	 *	psw
-	 *		senha criptografada
-	 *	tipo: string
-	 *  
-	 */
-	/*echo '<br />'.*/$psw = crypt($senha, '$'.METH.'$'.COAST.'$'.SALT.'$');
+	/*echo '<br />'.*/$senha = $_GET['senha'] ? validaSenha($_GET['senha']): false;
 	
 	/**
 	 *	nome
@@ -57,9 +53,30 @@
 	 *	tipo: string
 	 *  
 	 */
-	/*echo '<br />'.*/$nome = $_GET['nome'] ? $_GET['nome'] : false;
-		
+	/*echo '<br />'.*/$nome = $_GET['nome'] ? validaNome($_GET['nome']) : false;
+	
 	/**
+	 *	cpf 
+	 *		cadastro de pessoa fisica
+	 *	descricao
+	 *		Identificador unico da pessoa fisica composta por 11 digitos
+	 *	exemplo
+	 *		012345678950
+	 */
+	/*echo '<br />'.*/ $cpf  = $_GET['cpf'] ? validaCPF($_GET['cpf']) : false;
+	
+	/**
+	 *	termo 
+	 *		temo de uso e politica de privacidade
+	 *	descricao
+	 *		confirmacao de aceitacao do termo e da politica de privacidade
+	 *	tipo
+	 *		boolean/int
+         *              1 sim | 0 nao
+	 */
+	/*echo '<br />'.*/ $termo  = $_GET['termo'] ? $_GET['termo'] : 0;
+	
+        /**
 	 *	imagem
 	 *		url da imagem
 	 *	tipo: string
@@ -158,7 +175,7 @@
 	 *	uid
 	 *		uid da rede social que foi autenticado
 	 */
-	/*echo '<br />'.*/ $uid = $_GET['uid'] ? $_GET['uid'] : false ;
+	/*echo '<br />'.*/ $uid = $_GET['uid'] ? $_GET['uid'] : ($_GET['token'] ? pegarUID($_GET['token']) : false) ;
 	
 	/**
 	 *	social
@@ -174,4 +191,107 @@
 	 */
 	/*echo '<br />'.*/ $token  = $_GET['token'] ? $_GET['token'] : false;
 
+	/**
+	 *	ind_estabelecimento
+	 *		primary key da tabela integra_base_reclamacao_estabelecimento
+	 */
+	/*echo '<br />'.*/ $ind_estabelecimento  = $_GET['estabelecimento'] ? $_GET['estabelecimento'] : 0;
+
+	/**
+	 *	ind_tipo
+	 *		primary key da tabela: 
+	 			integra_base_reclamacao_tipo
+	 */
+	/*echo '<br />'.*/ $ind_tipo  = $_GET['tipo'] ? $_GET['tipo'] : 0;
+
+	/**
+	 *	banco
+	 *		nome do estabelecimento financeiro 
+	 *	tipo
+	 *		String
+	 */
+	/*echo '<br />'.*/ $banco  = $_GET['banco'] ? $_GET['banco'] : false;
+
+	/**
+	 *	agencia
+	 *		identificado da agencia bancaria 
+	 *	tipo
+	 *		String
+	 */
+	/*echo '<br />'.*/ $agencia  = $_GET['agencia'] ? $_GET['agencia'] : false;
+
+	/**
+	 *	data
+	 *		data da ocorrencia 
+	 *	tipo
+	 *		String
+	 *  formato 
+	 *		01-01-2018 (dd-mm-aaaa)
+	 */
+	/*echo '<br />'.*/ $data  = $_GET['data'] ? $_GET['data'] : false;
+	
+	/**
+	 *	hora
+	 *		hora da ocorrencia 
+	 *	tipo
+	 *		String
+	 *	formato
+	 *		23-15-45 (h-m-s)
+	 */
+	/*echo '<br />'.*/ $hora  = $_GET['hora'] ? $_GET['hora'] : false;
+
+	/**
+	 *	espera
+	 *		tempo de espera em minutos 
+	 *	tipo
+	 *		inteiro
+	 *	exemplo
+	 *		198 (3 hora e 18 minutos)
+	 */
+	/*echo '<br />'.*/ $espera  = $_GET['espera'] ? $_GET['espera'] : 0;
+
+	/**
+	 *	atendido
+	 *		define se o usuário aguardou o atendimento ou desistiu 
+	 *	tipo
+	 *		boolean/inteiro
+	 *	exemplo
+	 *		1/Sim 
+	 *		0/Nao (padrao)
+	 *		
+	 */
+	/*echo '<br />'.*/ $atendido  = $_GET['atendido'] ? $_GET['atendido'] : 0;
+	
+	/**
+	 *	queixa
+	 *		descricao em texto simple da situacao pelo quixoso 
+	 *	tipo
+	 *		string
+	 */
+	/*echo '<br />'.*/ $queixa  = $_GET['queixa'] ? $_GET['queixa'] : false;
+	
+	/**
+	 *	anexos
+	 *		texto em formmato de url separado por virgula (,) 
+	 *	tipo
+	 *		string
+	 */
+	/*echo '<br />'.*/ $anexos  = $_GET['anexos'] ? $_GET['anexos'] : false;
+
+	/**
+	 *	code
+	 *		define o codigo do status da reclamação 
+	 *	tipo
+	 *		inteiro
+	 */
+	/*echo '<br />'.*/ $code  = $_GET['code'] ? $_GET['code'] : 0;
+	
+	/**
+	 *	reclamacao
+	 *		primary key da tabela de reclamações 
+	 *	tipo
+	 *		inteiro
+	 */
+	/*echo '<br />'.*/ $reclamacao  = $_GET['reclamacao'] ? $_GET['reclamacao'] : 0;
+	
 ?>

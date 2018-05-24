@@ -3,24 +3,26 @@
 		
 		//gera token
 		public function geraToken($key, $uid, $social, $time){
-			return($key && $social && $uid && $time) ? sha1($key.".".$social.".".$uid.".".$time).'-'.base64_encode($time): false;
+			return($key && $social && $uid && $time) ? sha1($key.".".$social.".".$uid.".".$time).'-'.base64_encode($uid).'-'.base64_encode($social).'-'.base64_encode($time): false;
 		}
 		
 		//valida token
-		public function validaToken($key, $uid, $social, $token, $ldias, $time){
+		public function validaToken($key, $token, $ldias, $time){
 			$pts = explode('-',$token);
+			$uid = base64_decode($pts[1]);
+			$soc = base64_decode($pts[2]);
+			$tme = base64_decode($pts[3]);
 			$tkn = $pts[0];
-			$tme = $pts[1];
-			if($tkn === sha1($key.".".$social.".".$uid.".".$tme)){
-				$ttoken = $tkn + $ldias;
+			$sha1 = sha1($key.".".$soc.".".$uid.".".$tme);
+			if($tkn === $sha1){
+				$ttoken = $tme + $ldias;
 				if($ttoken > $time){
-					return true;
+					return 102;
 				}else{
-					$msg[100]['status_message'] = "Erro: Token expirou em: ". date ('d/m/Y H:i:s',$ttoken).".";
-					return false;
+					return 103;
 				}
 			}else{
-				return false;
+				return 100;
 			}
 		}
 	}

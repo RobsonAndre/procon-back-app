@@ -1,21 +1,9 @@
 ﻿<?php
-	include("../config/headers.php");
-	include("../config/defines.php");
-	include("../config/connect.php");
-	include("../config/query.php");
-	include("../config/token.php");
-	include("../config/mensagens.php");
-	include("../config/vars.php");
+    /**
+     * @author Robson Andre
+     */
+	include("../config/config.php");
 	
-	$tk = new Token;
-	
-	$authentic = $tk->validaToken(KEY,$uid,$social,$token); 
-	/** /
-	//nao existe usuario autenticado durante o login	
-	if(!$authentic){
-		$output = $msg[100];
-	}else
-	/**/
 	if($action==1){
 		include("./login.php");
 	}elseif($action==2){

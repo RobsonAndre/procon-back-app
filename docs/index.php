@@ -12,44 +12,187 @@
 
 <body>
 	<div class="container">
-		<div class="row">
-        	<div class="col">
-            	<h5 class="purple-text text-darken-4"><u>Login</u></h5>
-                <div class="row">
-        			<div class="col" style="font-size:24px">
-        				<span class="orange-text" style="padding-right:10px;">GET</span> <span class="teal-text">/login/?action={<span class="red-text">action</span>}&amp;email={<span class="red-text">email</span>}&amp;senha={<span class="red-text">senha</span>}</span>
-                	</div>
-                </div>
-                <div class="row">
-        			<div class="col" style="font-size:14px">
-        				<span style="font-size:18px">Parametros:</span><br />
-                        <div style="padding-left:25px;">
-                        action [inteiro]: 1<br />
-                        email [email]: user@user.com<br />
-                        senha [string]: teste#senha@1
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-        			<div class="col" style="font-size:14px">
-        				<span style="font-size:18px">Uso:</span><br />
-                        <div style="padding-left:25px;">
-                        <a href="http://papiroweb.com.br/integra/login/?action=1&email=user@user.com&senha=senha@12&" target="_blank">http://papiroweb.com.br/integra/login/?action=1&amp;email=user@user.com&amp;senha=senha@12&amp;</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="row">
-        			<div class="col" style="font-size:14px">
-        				<span style="font-size:18px">Mensagens:</span><br />
-                        <div style="padding-left:25px;">
-                        	<a href="./msg.php?m=110&" target="_blank">110 - Sucesso</a><br />
-                        	<a href="./msg.php?m=111&" target="_blank">111 - Erro</a><br />
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>	
-	</div>
+		<br />
+  		<h1 class="header center orange-text"><span class="teal-text">in</span>Tegra</h1>
+  		<div class="row center">
+    		<h5 class="header col s12 light teal-text text-darken-4">Api :: Docs</h5>
+  		</div>
+  		<br />
+  	</div>
+	<div class="container">
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                    Usuário
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Login</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Verifica a permissão de acesso e registra o login do usuário.
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=user.login" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Cadastro</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Possibilita o cadastro de um novo usuário no app ou web.
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=user.cadastro" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Redefinir Senha</b><br /><!--<span style="color:#666; font-size:10px">14/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Possibilita ao usuário redefinir a senha de acesso ao app ou web.
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=user.redefinir.senha" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <div class="container">
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                    Estabelecimentos
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Tipos Listar</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Lista tipos de estabelecimentos cadastrados
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=estabelecimento.listar" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+	<div class="container">
+        <table class="bordered">
+            <thead>
+                <tr>
+                    <th colspan="3">
+                    Reclama&ccedil;&otilde;es
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Tipos Listar</b><br /><!--<span style="color:#666; font-size:10px">12/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Lista tipos de reclamações relacionadas aos estabelecimentos cadastrados.
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=reclamacoes.listar" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Registrar</b><br /><!--<span style="color:#666; font-size:10px">12/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Permite gravar/registrar uma reclamação.
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=gravar.reclamacao" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Extrato</b><br /><!--<span style="color:#666; font-size:10px">12/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Apresenta um extrato de reclamações do usuário registrado atraves do token.
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=minhas.reclamacoes" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Lista</b><br /><!--<span style="color:#666; font-size:10px">12/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Apresenta uma lista das reclamações do usuário registrado atraves do token e relacionadas ao code.
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=minhas.reclamacoes.lista" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td class="teal-text" style="width:15%">
+                        <b>Mostrar</b><br /><!--<span style="color:#666; font-size:10px">12/05/2018</span>-->
+                    </td>
+                    <td class="blue-text">
+                        Apresenta a reclamação detalhada soliciata atraves do uid (reclamação).
+                    </td>
+                    <td class="right">
+                        <a href="./metodo.php?m=minha.reclamacao.mostrar" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <i class="material-icons">
+                                chevron_right
+                            </i>
+                        </a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 	<!--JavaScript at end of body for optimized loading--> 
 	<script type="text/javascript" src="../assets/materialize/js/materialize.min.js"></script>
 </body>

@@ -5,7 +5,7 @@
 	define("PASS", "Yae2Eep5");
 	define("DB",   "papiroweb");
 	
-	define("PFIX", "integra_");
+	define("PFIX", "papiroweb.integra_");
 	
 	define("KEY",  "integra.papiroweb.com.br");
 	

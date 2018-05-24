@@ -3,7 +3,7 @@
 		
 		//query
 		public function query($s){
-			$r = mysql_query($s) or die(mysql_error());
+			$r = mysql_query($s) or die($s.' :: '.mysql_error());
 			return $r;
 		
 		}
@@ -14,14 +14,16 @@
 		}
 		//array
 		public function arr($r){
+			/**/
 			while($row = mysql_fetch_array($r)){
-				$data[]=$row;
+				$data[]= ($row);
 			}
 			return $data;
+			/**/
 			/** /
 			$arr = array();
 			while($d = mysql_fetch_array($r)){
-				$arr[count($arr)] = $d;
+				$arr[count($arr)] = utf8_encode($d);
 			}
 			return $arr;
 			/**/
