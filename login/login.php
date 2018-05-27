@@ -4,13 +4,17 @@
 	$Qry  = new Qry; 
 	$c = $Conn->connect(HOST,USER,PASS,DB);
 	//SQL
-	$s = "SELECT uid FROM ".PFIX."user_login WHERE email='$email' AND senha='$senha' ";
+	$s = "SELECT uid, nome, cpf, email FROM ".PFIX."user_login WHERE email='$email' AND senha='$senha' ";
 	$r = $Qry->query($s);
 	$l = $Qry->rows($r);
 	if($l){
 		//Pegando o UID
 		$d = $Qry->arr($r);
-		$uid = $d[0]['uid'];
+		$uid    = $d[0]['uid'];
+		$nome   = $d[0]['nome'];
+		$cpf    = substr($d[0]['cpf'],0,3).'.***.***-'.substr($d[0]['cpf'],9,2);
+		$email  = $d[0]['email'];
+		$imagem = userImagem($uid);
 		//Gerando o token
 		$tk    = new Token;
 		$token = $tk->geraToken(KEY,$uid,$social,$time); 
@@ -22,10 +26,10 @@
 		//inserindo info no objeto
 		$msg[110]['results']['uid']        = $uid;
 		$msg[110]['results']['token']      = $token;
-		$msg[110]['results']['nome']       = 'Nome Completo';
-		$msg[110]['results']['imagem']     = '';
-		$msg[110]['results']['sexo']       = 'masculino';
+		$msg[110]['results']['nome']       = $nome;
+		$msg[110]['results']['imagem']     = $imagem;
 		$msg[110]['results']['social']     = $social;
+		$msg[110]['results']['cpf']        = $cpf;
 		$msg[110]['results']['verificado'] = false;
 		$msg[110]['results']['cadastro']   = false;
 		

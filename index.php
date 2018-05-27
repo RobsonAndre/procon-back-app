@@ -13,10 +13,10 @@
     <body>
         <div class="container">
             <br>
-            <br>
-            <h1 class="header center orange-text"><span class="teal-text">in</span>Tegra</h1>
             <div class="row center">
-                <h5 class="header col s12 light teal-text text-darken-4">Fazendo a mudança acontecer..</h5>
+                <img src="assets/image/logo/logo-400x400.png" width="200" />
+                <h1 class="header center" style="color:#8B8000;"><span style="color:#00698C;">in</span>Tegra</h1>
+                <h5 class="header col s12">Fazendo a mudança acontecer.</h5>
             </div>
             <br>
             <br>
