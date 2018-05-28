@@ -63,6 +63,7 @@ if ($validate) {
                 //atualizando a base de dados com o uid
                 $s = "UPDATE " . PFIX . "user_login SET uid = '$uid' WHERE indice = '$ind' ";
                 if ($r = $Qry->query($s)) {
+                    emailCadastro($uid, $email, $nome);
                     $output = $msg[120];
                 } else {
                     $msg[121]['info'] = "Erro ao gerar o UID, tente novamente.";
