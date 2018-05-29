@@ -83,4 +83,3 @@ if ($validate) {
 } else {
     $output = $msg[121];
 }
-?>

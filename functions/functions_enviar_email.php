@@ -1,6 +1,6 @@
 <?php
 
-function enviarEmail($email, $nome, $msg) {
+function enviarEmail($email, $nome, $msg, $ass) {
     //$enviado = true;
     // Inclui o arquivo class.phpmailer.php localizado na pasta phpmailer
     require("../assets/PHPMailer-5.2.21/class.phpmailer.php");
@@ -19,7 +19,7 @@ function enviarEmail($email, $nome, $msg) {
     $mail->Password = 'papiroweb@12';
     // Define o remetente
     $mail->From = "contato@papiroweb.com.br";
-    $mail->FromName = "Recurperar senha - inTegra";
+    $mail->FromName = "inTegra";
     // Define os destinatário(s)
     $mail->AddAddress($email, $nome);
     // Charset da mensagem (opcional)
@@ -28,11 +28,9 @@ function enviarEmail($email, $nome, $msg) {
     // Configura a mensagem em HTML (opcional)
     $mail->IsHTML(true);
     // Define a mensagem (Texto e Assunto)
-    $mail->Subject = "Recuperar Senha";
+    $mail->Subject = $ass;
     $mail->Body = $mensagemHTML;
     $mail->AltBody = trim(strip_tags($mensagemHTML));
     
     return $mail->Send();
 }
-
-?>

@@ -9,5 +9,3 @@ include("../functions/functions.php");
 include("../config/token.php");
 include("../config/vars.php");
 include("../config/mensagens.php");
-
-?>

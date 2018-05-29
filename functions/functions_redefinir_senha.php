@@ -14,9 +14,9 @@ function redefinirSenha($uid, $email, $nome) {
     $path     = "http://papiroweb.com.br/integra/arquivos/";
     $url      = $path . "redefinirsenha/?token=" . $token . "&email=" . $email . "&";
     $msg      = '<div>Para redefinir a sua senha, <a href="' . $url . '" target="_blank">click aqui</a> </div>';
-    
-    $enviado  = enviarEmail($email, $nome, $msg);
+    $ass      = 'Redefinir senha';
+
+    $enviado  = enviarEmail($email, $nome, $msg, $ass);
     
     return($enviado);
 }
-?>
