@@ -3,12 +3,8 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/integra/config/vars.php</file>
-            <file>file:/C:/xampp/htdocs/integra/functions/functions.php</file>
             <file>file:/C:/xampp/htdocs/integra/functions/functions_caracter_especial.php</file>
-            <file>file:/C:/xampp/htdocs/integra/teste/valida_nome.php</file>
-            <file>file:/C:/xampp/htdocs/integra/functions/functions_valida_nome.php</file>
-            <file>file:/C:/xampp/htdocs/integra/arquivos/functions/functions.php</file>
+            <file>file:/C:/xampp/htdocs/integra/login/login.php</file>
         </group>
     </open-files>
 </project-private>

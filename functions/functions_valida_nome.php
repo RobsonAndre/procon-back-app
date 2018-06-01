@@ -6,9 +6,7 @@ function validaNome($nome) {
     $espaco = strpos($nome, ' ');
     $parte  = explode(' ', $nome);
     
-    if ($tam < 5 && $nome) {
-        $nome = false;
-    }elseif ($tam > 124) {
+    if ($tam < 5 || $tam > 128) {
         $nome = false;
     }elseif ($espaco < 1) {
         $nome = false;
@@ -18,11 +16,8 @@ function validaNome($nome) {
         $nome = false;
     }elseif (strlen($parte[0]) < 3) {
         $nome = false;
-    }
-    /**/
-    elseif(caracterEspecial($nome)){
-        $nome = false;
-    }
+    }elseif(caracterEspecial($nome)){
+        $nome = false;}
     /**/
     return $nome;
 }

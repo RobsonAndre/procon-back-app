@@ -14,7 +14,7 @@
 		$nome       = $d[0]['nome'];
 		$cpf        = substr($d[0]['cpf'],0,3).'.***.***-'.substr($d[0]['cpf'],9,2);
 		$email      = $d[0]['email'];
-		$verificado = $d[0]['verificado'];
+		$verificado = $d[0]['verificado']; 
 		$imagem = userImagem($uid);
 		//Gerando o token
 		$tk    = new Token;
@@ -27,6 +27,7 @@
 		//inserindo info no objeto
 		$msg[110]['results']['uid']        = $uid;
 		$msg[110]['results']['token']      = $token;
+		$msg[110]['results']['email']      = $email;
 		$msg[110]['results']['nome']       = $nome;
 		$msg[110]['results']['imagem']     = $imagem;
 		$msg[110]['results']['social']     = $social;
