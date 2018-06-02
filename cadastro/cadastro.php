@@ -42,16 +42,15 @@ if ($validate) {
     }
 
     if (!$valCPF) {
-
         $msg[121]['info'] = "O CPF " . $cpf . " já esta cadastrado, tente recuperar a senha.";
         $output = $msg[121];
     } elseif (!$valEmail) {
-
         $msg[121]['info'] = "O E-mail " . $email . " já esta cadastrado, tente recuperar a senha.";
         $output = $msg[121];
     } else {
         $s = "INSERT INTO " . PFIX . "user_login (nome, cpf, email, senha, time) VALUES ('$nome','$cpf','$email','$senha','$time')";
-        if ($r = $Qry->query($s)) {
+        $r = $Qry->query($s);
+        if ($r) {
             //recuperando o indice e gerando o UID
             $s = "SELECT indice FROM " . PFIX . "user_login WHERE cpf = '$cpf' AND email = '$email' AND time='$time'";
             $r = $Qry->query($s);
@@ -60,9 +59,24 @@ if ($validate) {
                 $d = $Qry->arr($r);
                 $ind = $d[0]['indice'];
                 $uid = sha1($ind);
+                //registrando a aceitacao do termo de uso e politica de privacidade
+                //pegando o indice do termo
+                $st = "SELECT indice FROM " . PFIX . "termo WHERE status = 1";
+                $rt = $Qry->query($st);
+                $dt = $Qry->arr($rt);
+                $itermo = $dt[0]['indice'];
+                //pegando o indice da politica
+                $sp = "SELECT indice FROM " . PFIX . "politica WHERE status = 1";
+                $rp = $Qry->query($sp);
+                $dp = $Qry->arr($rp);
+                $ipolitica = $dp[0]['indice'];
+                //registrando o aceite
+                $sql = "INSERT INTO " . PFIX . "user_termo_politica (uid, termo, politica, time) VALUES ('$uid', '$itermo', '$ipolitica', '$time') ";
+                $Qry->query($sql);
                 //atualizando a base de dados com o uid
                 $s = "UPDATE " . PFIX . "user_login SET uid = '$uid' WHERE indice = '$ind' ";
-                if ($r = $Qry->query($s)) {
+                $r = $Qry->query($s);
+                if ($r) {
                     emailCadastro($uid, $email, $nome);
                     $output = $msg[120];
                 } else {

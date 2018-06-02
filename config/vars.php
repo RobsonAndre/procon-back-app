@@ -1,10 +1,5 @@
 <?php
 /**
- * lista de caracter especial
- */
-$especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=','?','~','^','>','<',']','/');
-
-/**
  *  time
  *      data e hora no formato timestamp
  *  tipo
@@ -198,13 +193,13 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  token
  *      identificado enviado pelo sistema popcine para o usuário autenticado
  */
-/* echo '<br />'. */ $token = filter_input(INPUT_GET, 'token', FILTER_SANITIZE_STRING); //$_GET['token'] ? $_GET['token'] : false;
+/* echo '<br />'. */ $token = filter_input(INPUT_GET, 'token', FILTER_SANITIZE_STRING); 
 
 /**
  *  uid
  *      uid da rede social que foi autenticado
  */
-/* echo '<br />'. */ $uidtmp = filter_input(INPUT_GET, 'uid', FILTER_SANITIZE_STRING); //$_GET['uid'] ? $_GET['uid'] : ($_GET['token'] ? pegarUID($_GET['token']) : false) ;
+/* echo '<br />'. */ $uidtmp = filter_input(INPUT_GET, 'uid', FILTER_SANITIZE_STRING); 
 /* echo '<br />'. */ $uid = $uidtmp ? $uidtmp : ($token ? pegarUID($token) : false);
 
 /**
@@ -222,13 +217,13 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  ind_estabelecimento
  *      primary key da tabela integra_base_reclamacao_estabelecimento
  */
-/* echo '<br />'. */ $ind_estabelecimento = filter_input(INPUT_GET, 'estabelecimento', FILTER_SANITIZE_NUMBER_INT); //$_GET['estabelecimento'] ? $_GET['estabelecimento'] : 0;
+/* echo '<br />'. */ $ind_estabelecimento = filter_input(INPUT_GET, 'estabelecimento', FILTER_SANITIZE_NUMBER_INT); 
 
 /**
  *  ind_tipo
  *      primary key da tabela: integra_base_reclamacao_tipo
  */
-/* echo '<br />'. */ $ind_tipo = filter_input(INPUT_GET, 'tipo', FILTER_SANITIZE_NUMBER_INT); //$_GET['tipo'] ? $_GET['tipo'] : 0;
+/* echo '<br />'. */ $ind_tipo = filter_input(INPUT_GET, 'tipo', FILTER_SANITIZE_NUMBER_INT); 
 
 /**
  *  banco
@@ -236,7 +231,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  tipo
  * 	String
  */
-/* echo '<br />'. */ $banco = filter_input(INPUT_GET, 'banco', FILTER_SANITIZE_STRING); //$_GET['banco'] ? $_GET['banco'] : false;
+/* echo '<br />'. */ $banco = filter_input(INPUT_GET, 'banco', FILTER_SANITIZE_STRING); 
 
 /**
  *  agencia
@@ -244,7 +239,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  tipo
  *      String
  */
-/* echo '<br />'. */ $agencia = filter_input(INPUT_GET, 'agencia', FILTER_SANITIZE_STRING); //$_GET['agencia'] ? $_GET['agencia'] : false;
+/* echo '<br />'. */ $agencia = filter_input(INPUT_GET, 'agencia', FILTER_SANITIZE_STRING); 
 
 /**
  *  data
@@ -254,7 +249,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  exemplo 
  *      01-01-2018 (dd-mm-aaaa)
  */
-/* echo '<br />'. */ $data = filter_input(INPUT_GET, 'data', FILTER_SANITIZE_STRING); //$_GET['data'] ? $_GET['data'] : false;
+/* echo '<br />'. */ $data = filter_input(INPUT_GET, 'data', FILTER_SANITIZE_STRING); 
 
 /**
  *  hora
@@ -264,7 +259,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  exemplo
  *      23-15-45 (h-m-s)
  */
-/* echo '<br />'. */ $hora = filter_input(INPUT_GET, 'hora', FILTER_SANITIZE_STRING); //$_GET['hora'] ? $_GET['hora'] : false;
+/* echo '<br />'. */ $hora = filter_input(INPUT_GET, 'hora', FILTER_SANITIZE_STRING); 
 
 /**
  *  espera
@@ -274,7 +269,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  exemplo
  *      198 (3 hora e 18 minutos)
  */
-/* echo '<br />'. */ $espera = filter_input(INPUT_GET, 'espera', FILTER_SANITIZE_NUMBER_INT); //$_GET['espera'] ? $_GET['espera'] : 0;
+/* echo '<br />'. */ $espera = filter_input(INPUT_GET, 'espera', FILTER_SANITIZE_NUMBER_INT); 
 
 /**
  *  atendido
@@ -285,7 +280,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *      1/Sim 
  *      0/Nao (padrao)	
  */
-/* echo '<br />'. */ $atendido = filter_input(INPUT_GET, 'atendido', FILTER_SANITIZE_NUMBER_INT); //$_GET['atendido'] ? $_GET['atendido'] : 0;
+/* echo '<br />'. */ $atendido = filter_input(INPUT_GET, 'atendido', FILTER_SANITIZE_NUMBER_INT); 
 
 /**
  *  queixa
@@ -293,7 +288,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  tipo
  *      string
  */
-/* echo '<br />'. */ $queixa = filter_input(INPUT_GET, 'queixa', FILTER_SANITIZE_STRING); //$_GET['queixa'] ? $_GET['queixa'] : false;
+/* echo '<br />'. */ $queixa = filter_input(INPUT_GET, 'queixa', FILTER_SANITIZE_STRING); 
 
 /**
  *  anexos
@@ -301,7 +296,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  tipo
  *      string
  */
-/* echo '<br />'. */ $anexos = filter_input(INPUT_GET, 'anexos', FILTER_SANITIZE_STRING); //$_GET['anexos'] ? $_GET['anexos'] : false;
+/* echo '<br />'. */ $anexos = filter_input(INPUT_GET, 'anexos', FILTER_SANITIZE_STRING); 
 
 /**
  *  code
@@ -309,7 +304,7 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  tipo
  *      inteiro
  */
-/* echo '<br />'. */ $code = filter_input(INPUT_GET, 'code', FILTER_SANITIZE_NUMBER_INT); //$_GET['code'] ? $_GET['code'] : 0;
+/* echo '<br />'. */ $code = filter_input(INPUT_GET, 'code', FILTER_SANITIZE_NUMBER_INT); 
 
 /**
  *  reclamacao
@@ -317,4 +312,12 @@ $especiais = array('/', '[','(',')',';',':','|','!','"','#','$','%','&','/','=',
  *  tipo
  *      inteiro
  */
-/* echo '<br />'. */ $reclamacao = filter_input(INPUT_GET, 'reclamacao', FILTER_SANITIZE_NUMBER_INT); //$_GET['reclamacao'] ? $_GET['reclamacao'] : 0;
+/* echo '<br />'. */ $reclamacao = filter_input(INPUT_GET, 'reclamacao', FILTER_SANITIZE_NUMBER_INT);
+
+/**
+ *  Tipo
+ *      define o tipo da requisicao 
+ *  tipo
+ *      string
+ */
+/* echo '<br />'. */ $tipo = filter_input(INPUT_GET, 'tipo', FILTER_SANITIZE_STRING); 
