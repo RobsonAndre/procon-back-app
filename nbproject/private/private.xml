@@ -3,8 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/integra/functions/functions_caracter_especial.php</file>
+            <file>file:/C:/xampp/htdocs/integra/config/vars.php</file>
             <file>file:/C:/xampp/htdocs/integra/login/login.php</file>
+            <file>file:/C:/xampp/htdocs/integra/config/config.php</file>
+            <file>file:/C:/xampp/htdocs/integra/config/mensagens.php</file>
         </group>
     </open-files>
 </project-private>

@@ -41,7 +41,8 @@ if ($l) {
     //guardando a senha sem criptografia
     $senha = filter_input(INPUT_GET, 'senha', FILTER_SANITIZE_NUMBER_INT);
     //inserindo o ERROR no acesso_log_error
-    $s = "INSERT INTO " . PFIX . "acesso_log_error (email, senha, time) VALUES ('$email', '$senha', '$time')";
+    $s = "INSERT INTO " . PFIX . "acesso_log_error (ip, email, senha, time) VALUES ('$ip', '$email', '$senha', '$time')";
+    $msg[111]['s'] = $s;
     $r = $Qry->query($s);
     $output = $msg[111];
 }

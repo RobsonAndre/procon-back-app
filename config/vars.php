@@ -1,5 +1,14 @@
 <?php
 /**
+ *  ip
+ *      endereco de ip do cliente
+ *  tipo
+ *      string / ip
+ *  formato
+ *      123.123.123.123
+ */
+$ip = $_SERVER['REMOTE_ADDR'];
+/**
  *  time
  *      data e hora no formato timestamp
  *  tipo
@@ -321,3 +330,11 @@
  *      string
  */
 /* echo '<br />'. */ $tipo = filter_input(INPUT_GET, 'tipo', FILTER_SANITIZE_STRING); 
+
+/**
+ *  Procon
+ *      id Procon define a qual procon esta endereçada a requisicao 
+ *  tipo
+ *      inteiro
+ */
+/* echo '<br />'. */ $procon = filter_input(INPUT_GET, 'procon', FILTER_SANITIZE_NUMBER_INT); 
