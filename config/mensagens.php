@@ -7,7 +7,8 @@
 
 	//Login
 	$msg[110] = array('status_code'=>110,'status_message'=>'Sucesso: Autenticação realizada com sucesso.','success'=>true);	
-	$msg[111] = array('status_code'=>111,'status_message'=>'Erro: Usuário e/ou senha incorreto(s).','success'=>false);	
+	$msg[111] = array('status_code'=>111,'status_message'=>'Erro: Senha incorreta.','success'=>false);	
+        $msg[112] = array('status_code'=>112,'status_message'=>'Erro: Usuário incorreto ou não cadastrado.','success'=>false);	
 
 	//Cadastro
 	$msg[120] = array('status_code'=>120,'status_message'=>'Sucesso: Cadastro realizado, você já pode logar no App.','success'=>true);

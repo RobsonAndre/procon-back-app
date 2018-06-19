@@ -30,6 +30,7 @@
                         <div style="padding-left:25px;">
                         	<a href="./msg.php?m=110&" target="_blank">110 - Sucesso</a><br />
                         	<a href="./msg.php?m=111&" target="_blank">111 - Erro</a><br />
+                        	<a href="./msg.php?m=112&" target="_blank">112 - Erro</a><br />
                         </div>
                     </div>
                 </div>

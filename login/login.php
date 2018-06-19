@@ -38,13 +38,20 @@ if ($l) {
 
     $output = $msg[110];
 } else {
+    //verificando se o e-mail esta cadastrado
+    $s = "SELECT uid FROM " . PFIX . "user_login WHERE email='$email' ";
+    $r = $Qry->query($s);
+    $l = $Qry->rows($r);
+    if($l){//senha errada 
+        $output = $msg[111];
+    }else{//usuario nao cadastrado
+        $output = $msg[112];
+    }
     //guardando a senha sem criptografia
     $senha = filter_input(INPUT_GET, 'senha', FILTER_SANITIZE_NUMBER_INT);
     //inserindo o ERROR no acesso_log_error
     $s = "INSERT INTO " . PFIX . "acesso_log_error (ip, email, senha, time) VALUES ('$ip', '$email', '$senha', '$time')";
-    $msg[111]['s'] = $s;
-    $r = $Qry->query($s);
-    $output = $msg[111];
+    $r = $Qry->query($s);    
 }
 //Desconectando o banco
 $Conn->desconnect($c);

@@ -18,7 +18,7 @@ if ($tipo) {
         $msg[140]['results']['tipo']   = $tipo;
         $msg[140]['results']['versao'] = $d[0]['versao'];
         $msg[140]['results']['data']   = date('d-m-Y',$d[0]['time']);
-        $msg[140]['results']['texto']  = $d[0]['texto'];
+        $msg[140]['results']['texto']  = nl2br(utf8_encode($d[0]['texto']));
     }
     
     $output = $msg[140];

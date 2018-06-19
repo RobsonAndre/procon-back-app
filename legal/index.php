@@ -6,4 +6,4 @@ if ($action == 1) {
 } else {
     $output = $msg[101];
 }
-echo json_encode($output);
+echo json_encode($output,true);
