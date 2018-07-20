@@ -18,9 +18,9 @@ if ($emailCod === sha1($email)) {
     $s = "UPDATE " . PFIX . "user_login SET verificado = '$agora' WHERE email='$email' AND uid = '$uid' ";
     $r = $Qry->query($s);
     if ($r) {
-        echo "Sucesso: Cadastro validado.";
+        echo "Sucesso: e-mail validado.";
     } else {
-        echo "Erro: não foi possível validar seu cadastro, tente mais tarde.";
+        echo "Erro: não foi possível validar seu e-mail, tente mais tarde.";
     }
 } else {
     //echo "Erro: email nao confere!";

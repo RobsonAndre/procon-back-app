@@ -24,6 +24,11 @@
         $msg[140] = array('status_code'=>140,'status_message'=>'Sucesso: documento "'. $tipo .'" geredo com sucesso.','success'=>true);	
 	$msg[141] = array('status_code'=>141,'status_message'=>'Erro: impossivel gerar o documento '.$tipo.'.','success'=>false);	
 	        
+        //Documento (Termo de Uso ou Politica de Privacidade)
+        $msg[150] = array('status_code'=>150,'status_message'=>'Sucesso: e-mail enviado com sucesso.','success'=>true);	
+	$msg[151] = array('status_code'=>151,'status_message'=>'Erro: e-mail em invalido ou em branco.','success'=>false);	
+        $msg[152] = array('status_code'=>152,'status_message'=>'Erro: impossivel enviar o e-mail, tente mais tarde.','success'=>false);	
+        
         //Estabelecimentos
 	$msg[200] = array('status_code'=>200,'status_message'=>'Sucesso: Lista de estabelecimentos gerada.','success'=>true);
 	$msg[201] = array('status_code'=>201,'status_message'=>'Erro: Impossível gerar a lista de estabelecimentos.','success'=>false);

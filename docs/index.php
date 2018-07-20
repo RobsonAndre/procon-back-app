@@ -15,7 +15,7 @@
             <br />
             <h1 class="header center orange-text"><span class="teal-text">in</span>Tegra</h1>
             <div class="row center">
-                <h5 class="header col s12 light teal-text text-darken-4">Api :: Docs</h5>
+                <h5 class="header col s12 light teal-text text-darken-4">Api :: Documentação</h5>
             </div>
             <br />
         </div>
@@ -44,6 +44,19 @@
                             </a>
                         </td>
                     </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="container">
+            <table class="bordered">
+                <thead>
+                    <tr>
+                        <th colspan="3">
+                            Usuário
+                        </th>
+                    </tr>
+                </thead>
+                <tbody>
                     <tr>
                         <td class="teal-text" style="width:15%">
                             <b>Cadastro</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
@@ -74,19 +87,6 @@
                             </a>
                         </td>
                     </tr>
-                </tbody>
-            </table>
-        </div>
-        <div class="container">
-            <table class="bordered">
-                <thead>
-                    <tr>
-                        <th colspan="3">
-                            Usuário
-                        </th>
-                    </tr>
-                </thead>
-                <tbody>
                     <tr>
                         <td class="teal-text" style="width:15%">
                             <b>Login</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
@@ -119,13 +119,13 @@
                     </tr>
                     <tr>
                         <td class="teal-text" style="width:15%">
-                            <b>Redefinir Senha</b><br /><!--<span style="color:#666; font-size:10px">14/05/2018</span>-->
+                            <b>Verificar E-mail</b><br /><!--<span style="color:#666; font-size:10px">14/05/2018</span>-->
                         </td>
                         <td class="blue-text">
-                            Possibilita ao usuário redefinir a senha de acesso ao app ou web.
+                            Possibilita ao usuário verificar o e-mail cadastrado
                         </td>
                         <td class="right">
-                            <a href="./metodo.php?m=user.redefinir.senha" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                            <a href="./metodo.php?m=email.validar" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
                                 <i class="material-icons">
                                     chevron_right
                                 </i>

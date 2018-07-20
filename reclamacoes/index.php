@@ -21,4 +21,3 @@
 		$output = $msg[$cod];
 	}
 	echo json_encode($output);
-?>
