@@ -5,7 +5,11 @@ $Conn = new Conn;
 $Qry = new Qry;
 $c = $Conn->connect(HOST, USER, PASS, DB);
 //SQL
-$s = "SELECT uid, nome, cpf, email, verificado FROM " . PFIX . "user_login WHERE email='$email' AND senha='$senha' ";
+if($email){
+    $s = "SELECT uid, nome, cpf, email, verificado FROM " . PFIX . "user_login WHERE email='$email' AND senha='$senha' ";
+}else{
+    $s = "SELECT uid, nome, cpf, email, verificado FROM " . PFIX . "user_login WHERE cpf='$cpf' AND senha='$senha' ";
+}
 $r = $Qry->query($s);
 $l = $Qry->rows($r);
 if ($l) {

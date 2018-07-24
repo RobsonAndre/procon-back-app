@@ -74,6 +74,21 @@
                     </tr>
                     <tr>
                         <td class="teal-text" style="width:15%">
+                            <b>Trocar Senha</b><br /><!--<span style="color:#666; font-size:10px">14/05/2018</span>-->
+                        </td>
+                        <td class="blue-text">
+                            Possibilita ao usuário devidamento logado trocar a sua senha de de acesso ao app.
+                        </td>
+                        <td class="right">
+                            <a href="./metodo.php?m=user.trocar.senha" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="teal-text" style="width:15%">
                             <b>Redefinir Senha</b><br /><!--<span style="color:#666; font-size:10px">14/05/2018</span>-->
                         </td>
                         <td class="blue-text">

@@ -56,6 +56,14 @@ $ip = $_SERVER['REMOTE_ADDR'];
 /* echo '<br />'. */$senha = validaSenha(filter_input(INPUT_GET, 'senha', FILTER_SANITIZE_STRING));
 
 /**
+ *  nsenha
+ *      nova palavra chave do usuario
+ *  tipo
+ *      string
+ */
+/* echo '<br />'. */$nsenha = validaSenha(filter_input(INPUT_GET, 'nsenha', FILTER_SANITIZE_STRING));
+
+/**
  *  nome
  *      nome completo
  *  tipo
@@ -74,6 +82,10 @@ $ip = $_SERVER['REMOTE_ADDR'];
  *      012345678950
  */
 /* echo '<br />'. */$cpf = validaCPF(filter_input(INPUT_GET, 'cpf', FILTER_SANITIZE_NUMBER_INT));
+//permite fazer o login com o cpf alem do e-mail
+if(!$cpf){
+    $cpf = validaCPF(filter_input(INPUT_GET, 'email', FILTER_SANITIZE_NUMBER_INT));
+}
 
 /**
  *  termo 
@@ -94,6 +106,16 @@ $ip = $_SERVER['REMOTE_ADDR'];
  *      string
  */
 /* echo '<br />'. */$imagem = filter_input(INPUT_GET, 'termo', FILTER_SANITIZE_URL);
+
+/**
+ * nasc
+ *      data de nascimento 
+ * tipo 
+ *      string
+ * exemplo
+ *      01-01-2001
+ */
+/* echo '<br />'. */$nasc = validaNascimento(filter_input(INPUT_GET, 'nasc', FILTER_SANITIZE_STRING));
 
 /**
  * sexo
