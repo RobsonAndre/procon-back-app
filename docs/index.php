@@ -74,6 +74,66 @@
                     </tr>
                     <tr>
                         <td class="teal-text" style="width:15%">
+                            <b>Minha Ficha - Pessoal</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
+                        </td>
+                        <td class="blue-text">
+                            Possibilita ao usuario cadastrado e devidamente logado realizar a edição de sua ficha pessoal.
+                        </td>
+                        <td class="right">
+                            <a href="./metodo.php?m=user.cadastro.pessoal" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="teal-text" style="width:15%">
+                            <b>Minha Ficha - Endereço</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
+                        </td>
+                        <td class="blue-text">
+                            Possibilita ao usuario cadastrado e devidamente logado realizar o cadastro ou a edição do seu endereço.
+                        </td>
+                        <td class="right">
+                            <a href="./metodo.php?m=user.cadastro.endereco" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="teal-text" style="width:15%">
+                            <b>Minha Ficha - Anexo Documento</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
+                        </td>
+                        <td class="blue-text">
+                            Possibilita ao usuario cadastrado e devidamente logado realizar o cadastro ou a atualização  (upload) do documento.
+                        </td>
+                        <td class="right">
+                            <a href="./metodo.php?m=user.cadastro.anexo.doc" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="teal-text" style="width:15%">
+                            <b>Minha Ficha - Anexo Comprovante</b><br /><!--<span style="color:#666; font-size:10px">06/05/2018</span>-->
+                        </td>
+                        <td class="blue-text">
+                            Possibilita ao usuario cadastrado e devidamente logado realizar o cadastro ou a atualização  (upload) do documento.
+                        </td>
+                        <td class="right">
+                            <a href="./metodo.php?m=user.cadastro.anexo.comp" class="btn-floating waves-effect waves-light red" style="padding-right:10px;"> 
+                                <i class="material-icons">
+                                    chevron_right
+                                </i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td class="teal-text" style="width:15%">
                             <b>Trocar Senha</b><br /><!--<span style="color:#666; font-size:10px">14/05/2018</span>-->
                         </td>
                         <td class="blue-text">

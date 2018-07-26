@@ -16,6 +16,12 @@ $msg[120] = array('status_code' => 120, 'status_message' => 'Cadastro realizado,
 $msg[121] = array('status_code' => 121, 'status_message' => 'Cadastro não realizado.', 'success' => false, 'info' => '');
 $msg[122] = array('status_code' => 122, 'status_message' => 'Cadastro atualizado com sucesso.', 'success' => true);
 $msg[123] = array('status_code' => 123, 'status_message' => 'Cadastro não atualizado.', 'success' => false, 'info' => '');
+$msg[124] = array('status_code' => 124, 'status_message' => 'Endereço atualizado com sucesso.', 'success' => true);
+$msg[125] = array('status_code' => 125, 'status_message' => 'Endereço não atualizado.', 'success' => false, 'info' => '');
+$msg[126] = array('status_code' => 126, 'status_message' => 'Documento atualizado com sucesso.', 'success' => true);
+$msg[127] = array('status_code' => 127, 'status_message' => 'Documento não atualizado.', 'success' => false, 'info' => '');
+$msg[128] = array('status_code' => 128, 'status_message' => 'Comprovante atualizado com sucesso.', 'success' => true);
+$msg[129] = array('status_code' => 129, 'status_message' => 'Comprovante não atualizado.', 'success' => false, 'info' => '');
 
 //Senha redefinir
 $msg[130] = array('status_code' => 130, 'status_message' => 'Foi enviado um e-mail para "' . $email . '" com as instruções para redefinir a senha.', 'success' => true);

@@ -105,7 +105,7 @@ if(!$cpf){
  *  tipo
  *      string
  */
-/* echo '<br />'. */$imagem = filter_input(INPUT_GET, 'termo', FILTER_SANITIZE_URL);
+/* echo '<br />'. */$imagem = filter_input(INPUT_GET, 'imagem', FILTER_SANITIZE_URL);
 
 /**
  * nasc
@@ -274,7 +274,7 @@ if(!$cpf){
 
 /**
  *  data
- *      data da ocorrencia 
+ *      data da ocorrencia, data da emissao de uma documento ou comprovante 
  *  tipo
  *      String
  *  exemplo 
@@ -360,3 +360,99 @@ if(!$cpf){
  *      inteiro
  */
 /* echo '<br />'. */ $procon = filter_input(INPUT_GET, 'procon', FILTER_SANITIZE_NUMBER_INT); 
+
+/**
+ *  CEP
+ *      codigo de enderecamento postal
+ *  tipo
+ *      87050390 (sem hifen)
+ */
+/* echo '<br />'. */ $cep = validaCEP(filter_input(INPUT_GET, 'cep', FILTER_SANITIZE_NUMBER_INT)); 
+
+/**
+ *  logradouro
+ *      designa o referencial de enderecamento rua av praca entre outros
+ *  tipo
+ *      Rua Adelino Leal Nunes
+ */
+/* echo '<br />'. */ $logradouro = filter_input(INPUT_GET, 'logradouro', FILTER_SANITIZE_STRING); 
+
+/**
+ *  numero
+ *      posicionamento da residencia no logradouro
+ *  tipo
+ *      string 
+ *  exemplo
+ *      80
+ *      s\n
+ *      1025A
+ */
+/* echo '<br />'. */ $numero = filter_input(INPUT_GET, 'numero', FILTER_SANITIZE_STRING); 
+
+/**
+ *  complemento
+ *      proximidade ou detalhamento que permite localizar o endereco
+ *  tipo
+ *      string 
+ *  exemplo
+ *      Proximo ao numero 200
+ *      frente a escola
+ *      
+ */
+/* echo '<br />'. */ $complemento = filter_input(INPUT_GET, 'complemento', FILTER_SANITIZE_STRING); 
+
+/**
+ *  bairro
+ *      agrupamento de logradouros
+ *  tipo
+ *      string 
+ *  exemplo
+ *      Jd. Aclimação
+ *      
+ */
+/* echo '<br />'. */ $bairro = filter_input(INPUT_GET, 'bairro', FILTER_SANITIZE_STRING); 
+
+/**
+ *  cidade
+ *      cidade
+ *  tipo
+ *      string 
+ *  exemplo
+ *      Maringá
+ *      
+ */
+/* echo '<br />'. */ $cidade = filter_input(INPUT_GET, 'cidade', FILTER_SANITIZE_STRING); 
+
+/**
+ *  uf
+ *      unidade federativa- sigla 2 caracteres
+ *  tipo
+ *      string 
+ *  exemplo
+ *      PR
+ *      
+ */
+/* echo '<br />'. */ $uf = filter_input(INPUT_GET, 'uf', FILTER_SANITIZE_STRING); 
+
+/**
+ *  documento
+ *      descreve o tipo do documento
+ *  tipo
+ *      string 
+ *  exemplo
+ *      CNH RG CPF
+ *      
+ */
+/* echo '<br />'. */ $documento = filter_input(INPUT_GET, 'documento', FILTER_SANITIZE_STRING); 
+
+/**
+ *  lado
+ *      descreve a qual lado esta sendo exposto
+ *  tipo
+ *      string 
+ *  exemplo
+ *      frente ou verso
+ *      
+ */
+/* echo '<br />'. */ $lado = filter_input(INPUT_GET, 'lado', FILTER_SANITIZE_STRING); 
+
