@@ -6,9 +6,9 @@ $Qry = new Qry;
 $c = $Conn->connect(HOST, USER, PASS, DB);
 //SQL
 if($email){
-    $s = "SELECT uid, nome, cpf, email, verificado FROM " . PFIX . "user_login WHERE email='$email' AND senha='$senha' ";
+    $s = "SELECT uid, nome, sexo, nascimento, cpf, email, verificado FROM " . PFIX . "user_login WHERE email='$email' AND senha='$senha' ";
 }else{
-    $s = "SELECT uid, nome, cpf, email, verificado FROM " . PFIX . "user_login WHERE cpf='$cpf' AND senha='$senha' ";
+    $s = "SELECT uid, nome, sexo, nascimento, cpf, email, verificado FROM " . PFIX . "user_login WHERE cpf='$cpf' AND senha='$senha' ";
 }
 $r = $Qry->query($s);
 $l = $Qry->rows($r);
@@ -21,6 +21,8 @@ if ($l) {
     $email = $d[0]['email'];
     $verificado = $d[0]['verificado'];
     $imagem = userImagem($uid);
+    $nasc = $d[0]['nascimento'] ? date('d-m-Y',$d[0]['nascimento']) : '';
+    $sexo = $d[0]['sexo'];
     //Gerando o token
     $tk = new Token;
     $token = $tk->geraToken(KEY, $uid, $social, $time);
@@ -36,6 +38,8 @@ if ($l) {
     $msg[110]['results']['nome'] = $nome;
     $msg[110]['results']['imagem'] = $imagem;
     $msg[110]['results']['social'] = $social;
+    $msg[110]['results']['sexo'] = $sexo;
+    $msg[110]['results']['nasc'] = $nasc;
     $msg[110]['results']['cpf'] = $cpf;
     $msg[110]['results']['verificado'] = $verificado ? true : false;
     $msg[110]['results']['cadastro'] = false;

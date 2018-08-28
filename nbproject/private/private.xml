@@ -3,18 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/integra/config/vars.php</file>
-            <file>file:/C:/xampp/htdocs/integra/cadastro/endereco.php</file>
-            <file>file:/C:/xampp/htdocs/integra/functions/functions.php</file>
-            <file>file:/C:/xampp/htdocs/integra/functions/functions_valida_cep.php</file>
-            <file>file:/C:/xampp/htdocs/integra/cadastro/anexo.comprovante.php</file>
-            <file>file:/C:/xampp/htdocs/integra/cadastro/anexo.documento.php</file>
-            <file>file:/C:/xampp/htdocs/integra/docs/user.cadastro.anexo.comp.php</file>
-            <file>file:/C:/xampp/htdocs/integra/docs/user.cadastro.endereco.php</file>
-            <file>file:/C:/xampp/htdocs/integra/docs/user.cadastro.anexo.doc.php</file>
+            <file>file:/C:/xampp/htdocs/integra/cadastro/editar.php</file>
             <file>file:/C:/xampp/htdocs/integra/cadastro/index.php</file>
-            <file>file:/C:/xampp/htdocs/integra/docs/index.php</file>
-            <file>file:/C:/xampp/htdocs/integra/config/mensagens.php</file>
+            <file>file:/C:/xampp/htdocs/integra/login/login.php</file>
+            <file>file:/C:/xampp/htdocs/integra/cadastro/cadastro.php</file>
         </group>
     </open-files>
 </project-private>

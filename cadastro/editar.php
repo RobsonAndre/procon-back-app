@@ -72,6 +72,8 @@ if ($validate) {
             $msg[122]['results']['email'] = $email;
             $msg[122]['results']['nome'] = $nome;
             $msg[122]['results']['imagem'] = $imagem;
+            $msg[122]['results']['nasc'] = date('d-m-Y',$nasc);
+            $msg[122]['results']['sexo'] = $sexo;
             $msg[122]['results']['social'] = $social;
             $msg[122]['results']['cpf'] = $cpf;
             $msg[122]['results']['verificado'] = $verificado ? true : false;
