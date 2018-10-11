@@ -48,6 +48,14 @@ $msg[163] = array('status_code' => 163, 'status_message' => 'Nova senha n&atilde
 $msg[170] = array('status_code' => 170, 'status_message' => 'Lista gerada com sucesso.', 'success' => true);
 $msg[171] = array('status_code' => 171, 'status_message' => 'Impossivel gerar a lista de Leis.', 'success' => false);
 
+//UF
+$msg[180] = array('status_code' => 180, 'status_message' => 'Lista gerada com sucesso.', 'success' => true);
+$msg[181] = array('status_code' => 181, 'status_message' => 'Impossivel gerar a lista de Estados.', 'success' => false);
+
+//Municipios
+$msg[190] = array('status_code' => 190, 'status_message' => 'Lista gerada com sucesso.', 'success' => true);
+$msg[191] = array('status_code' => 191, 'status_message' => 'Impossivel gerar a lista de Estados.', 'success' => false);
+
 //Estabelecimentos
 $msg[200] = array('status_code' => 200, 'status_message' => 'Lista de estabelecimentos gerada.', 'success' => true);
 $msg[201] = array('status_code' => 201, 'status_message' => 'Impossível gerar a lista de estabelecimentos.', 'success' => false);
@@ -63,3 +71,4 @@ $msg[216] = array('status_code' => 216, 'status_message' => 'Reclamações Lista
 $msg[217] = array('status_code' => 217, 'status_message' => 'Impossível listar as reclamações.', 'success' => false);
 $msg[218] = array('status_code' => 218, 'status_message' => 'Reclamação encontrada.', 'success' => true);
 $msg[219] = array('status_code' => 219, 'status_message' => 'Impossível encontrar a reclamação.', 'success' => false);
+
