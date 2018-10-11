@@ -44,6 +44,10 @@ $msg[161] = array('status_code' => 161, 'status_message' => 'Senha atual invalid
 $msg[162] = array('status_code' => 162, 'status_message' => 'Nova senha atual invalida ou em branco.', 'success' => false);
 $msg[163] = array('status_code' => 163, 'status_message' => 'Nova senha n&atilde;o pode ser igual a senha atual.', 'success' => false);
 
+//Leis
+$msg[170] = array('status_code' => 170, 'status_message' => 'Lista gerada com sucesso.', 'success' => true);
+$msg[171] = array('status_code' => 171, 'status_message' => 'Impossivel gerar a lista de Leis.', 'success' => false);
+
 //Estabelecimentos
 $msg[200] = array('status_code' => 200, 'status_message' => 'Lista de estabelecimentos gerada.', 'success' => true);
 $msg[201] = array('status_code' => 201, 'status_message' => 'Impossível gerar a lista de estabelecimentos.', 'success' => false);

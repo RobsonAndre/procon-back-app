@@ -22,6 +22,8 @@ if ($tipo) {
     }
     
     $output = $msg[140];
+    
+    $Conn->desconnect($c);
 } else {
     $output = $msg[141];
 }
