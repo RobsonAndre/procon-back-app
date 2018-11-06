@@ -18,7 +18,7 @@ if($uf){
 
         for($i=0;$i<count($arr);$i++){
             $msg[190]['results'][$i]['id']        = $arr[$i]['id'];
-            $msg[190]['results'][$i]['numicipio'] = utf8_encode($arr[$i]['nome']);
+            $msg[190]['results'][$i]['municipio'] = utf8_encode($arr[$i]['nome']);
             $msg[190]['results'][$i]['codigo']    = $arr[$i]['codigo'];
         }
         $output = $msg[190];

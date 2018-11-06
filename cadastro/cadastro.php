@@ -1,7 +1,6 @@
 <?php
-
 //valida nome completo
-if (!$nome || !$cpf || !$email || !$senha || !$termo) {
+if (!$nome || !$cpf || !$email || !$senha || !$termo || !$uf || !$cidade ) {
     $validate = false;
     if (!$nome) {
         $msg[121]['info'] = 'Nome em branco ou inválido, digite seu nome completo.';
@@ -13,6 +12,10 @@ if (!$nome || !$cpf || !$email || !$senha || !$termo) {
         $msg[121]['info'] = 'Senha em branco ou inválida, a senha deve conter de 8 a 15 caracteres.';
     } elseif (!$termo) {
         $msg[121]['info'] = 'Termo de uso e Política de Privacidade não lidos e não aceitos.';
+    }elseif (!$uf) {
+        $msg[121]['info'] = 'Id da UF em branco ou inválido.';
+    }elseif (!$cidade) {
+        $msg[121]['info'] = 'Id da Cidade em branco ou inválido.';
     }
 } else {
     $validate = true;
@@ -48,13 +51,14 @@ if ($validate) {
         $msg[121]['info'] = "O E-mail " . $email . " já esta cadastrado, tente recuperar a senha.";
         $output = $msg[121];
     } else {
-        $s = "INSERT INTO " . PFIX . "user_login (nome, cpf, email, senha, time) VALUES ('$nome','$cpf','$email','$senha','$time')";
+        $s = "INSERT INTO " . PFIX . "user_login (nome, cpf, email, senha, ind_estado, ind_municipio, time) VALUES ('$nome','$cpf','$email','$senha','$uf','$cidade','$time')";
         $r = $Qry->query($s);
         if ($r) {
             //recuperando o indice e gerando o UID
             $s = "SELECT indice FROM " . PFIX . "user_login WHERE cpf = '$cpf' AND email = '$email' AND time='$time'";
             $r = $Qry->query($s);
             $l = $Qry->rows($r);
+            //Gravando o uid
             if ($l) {
                 $d = $Qry->arr($r);
                 $ind = $d[0]['indice'];
@@ -84,9 +88,27 @@ if ($validate) {
                     $output = $msg[121];
                 }
             } else {
+                //TODO - fazer o rollback do cadastro, porque senão o usuario nao poderá fazer um novo cadastro 
                 $msg[121]['info'] = "Erro ao tentar gerar o UID, tente novamente.";
                 $output = $msg[121];
             }
+            //verificando se o procon desta cidade esta no sistema
+            $sss = "SELECT indice FROM ".PFIX."procon WHERE ind_estado = '$uf' AND ind_municipio = '$cidade' " ;
+            $rrr = $Qry->query($sss);
+            $lll = $Qry->rows($rrr);
+            
+            if($lll){
+            
+                //O procon da cidade esta no sistema
+                $msg[120]['existe'] = 1;
+            
+            }else{
+            
+                //O procon da cidade não esta no sistema
+                $msg[120]['existe'] = 0;
+            
+            }
+            $output = $msg[120];
         } else {
             $msg[121]['info'] = "Erro de acesso ao banco de dados, tente novamente.";
             $output = $msg[121];

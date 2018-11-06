@@ -32,6 +32,7 @@ $msg[133] = array('status_code' => 133, 'status_message' => 'Não foi possível 
 //Documento (Termo de Uso ou Politica de Privacidade)
 $msg[140] = array('status_code' => 140, 'status_message' => 'Documento "' . $tipo . '" geredo com sucesso.', 'success' => true);
 $msg[141] = array('status_code' => 141, 'status_message' => 'Impossivel gerar o documento ' . $tipo . '.', 'success' => false);
+$msg[142] = array('status_code' => 142, 'status_message' => 'Lei gerada com sucesso.', 'success' => true);
 
 //Documento (Termo de Uso ou Politica de Privacidade)
 $msg[150] = array('status_code' => 150, 'status_message' => 'E-mail enviado com sucesso.', 'success' => true);

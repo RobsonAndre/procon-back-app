@@ -1,6 +1,6 @@
 <?php
-
 include("../config/config.php");
+/**/
 
 $arr = explode('-', base64_decode(filter_input(INPUT_GET, 'token', FILTER_SANITIZE_STRING)));
 $time = base64_decode($arr[0]);
@@ -26,3 +26,5 @@ if ($emailCod === sha1($email)) {
     //echo "Erro: email nao confere!";
     echo "Erro: token invalido.";
 }
+ 
+/**/

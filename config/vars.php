@@ -421,7 +421,7 @@ if(!$cpf){
  *      Maringá
  *      
  */
-/* echo '<br />'. */ $cidade = filter_input(INPUT_GET, 'cidade', FILTER_SANITIZE_STRING); 
+/*echo '<br />'. */ $cidade = filter_input(INPUT_GET, 'cidade', FILTER_SANITIZE_STRING); 
 
 /**
  *  uf
@@ -455,4 +455,12 @@ if(!$cpf){
  *      
  */
 /* echo '<br />'. */ $lado = filter_input(INPUT_GET, 'lado', FILTER_SANITIZE_STRING); 
+
+/**
+ *  id
+ *      indice da tabela - primary key generica
+ *  tipo
+ *      inteiro
+ */
+/* echo '<br />'. */ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
 

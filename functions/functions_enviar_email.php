@@ -19,7 +19,7 @@ function enviarEmail($email, $nome, $msg, $ass) {
     $mail->Password = 'papiroweb@12';
     // Define o remetente
     $mail->From = "contato@papiroweb.com.br";
-    $mail->FromName = "inTegra";
+    $mail->FromName = "Procon na mão";
     // Define os destinatário(s)
     $mail->AddAddress($email, $nome);
     // Charset da mensagem (opcional)
