@@ -13,8 +13,8 @@
 		$msg[200]['results'] = $arr;
 		/** /
 		for($i=0; $i<count($arr); $i++){
-			$msg[200]['results']['list']['uid'] = $arr['uid'];
-			$msg[200]['results']['list']['estabelecimento'] = $arr['estabelecimento'];
+                    $msg[200]['results'][$i]['uid'] = $arr[$i]['uid'];
+                    $msg[200]['results'][$i]['estabelecimento'] = $arr[$i]['estabelecimento'];
 		}
 		/**/
 	}
@@ -23,4 +23,3 @@
 	
 	//Desconectando o banco
 	$Conn->desconnect($c);
-?>
