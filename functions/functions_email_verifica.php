@@ -11,7 +11,8 @@ function emailVerifica($uid, $email, $nome) {
     $msg      = '<div>Clique <a href="' . $url . '" target="_blank">Clique aqui</a> para validar seu e-mail.</div>';
     $ass      = 'Validar e-mail';
 
-    $enviado  = enviarEmail($email, $nome, $msg, $ass);
+    //$enviado  = enviarEmail($email, $nome, $msg, $ass);
 
+    $enviado = 1;
     return($enviado);
 }

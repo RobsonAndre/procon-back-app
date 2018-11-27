@@ -15,10 +15,15 @@
 			}elseif(!$espera){
 				$msg[213]['info'] = 'Campo Tempo de espera não preenchido';
 				$temp = $msg[213];
-			}elseif(!$atendido){
+			}
+                        /** /
+                        elseif(!$atendido){
 				$msg[213]['info'] = 'Campo Atendido não preenchido';
 				$temp = $msg[213];
-			}elseif(!$queixa){
+			}
+                        /**/
+                        elseif(!$queixa){
+                         
 				$msg[213]['info'] = 'Campo Queixa não preenchido';
 				$temp = $msg[213];
 			}elseif(!$anexos){
@@ -107,4 +112,3 @@
 	}
 
 	$output = $temp;
-?>

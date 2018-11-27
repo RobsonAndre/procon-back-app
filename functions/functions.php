@@ -15,3 +15,7 @@ include("../functions/functions_email_cadastro.php");
 include("../functions/functions_caracter_especial.php");
 include("../functions/functions_registra_termo_politica.php");
 include("../functions/functions_email_verifica.php");
+include("../functions/functions_pegar_procon.php");
+include("../functions/functions_pegar_ind_msg_pai.php");
+include("../functions/functions_status_mensagem.php");
+include("../functions/functions_mascara_mensagem_tipo.php");

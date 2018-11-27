@@ -254,7 +254,7 @@ if(!$cpf){
  *  ind_tipo
  *      primary key da tabela: integra_base_reclamacao_tipo
  */
-/* echo '<br />'. */ $ind_tipo = filter_input(INPUT_GET, 'tipo', FILTER_SANITIZE_NUMBER_INT); 
+ /* echo '<br />'. */ $ind_tipo = filter_input(INPUT_GET, 'tipo', FILTER_SANITIZE_NUMBER_INT); 
 
 /**
  *  banco
@@ -463,4 +463,20 @@ if(!$cpf){
  *      inteiro
  */
 /* echo '<br />'. */ $id = filter_input(INPUT_GET, 'id', FILTER_SANITIZE_NUMBER_INT);
+
+/**
+ *  mensagem
+ *      mensagem de texto 
+ *  tipo
+ *      varchar 1024 
+ */
+/* echo '<br />'. */ $mensagem = filter_input(INPUT_GET, 'mensagem', FILTER_SANITIZE_STRING);
+
+/**
+ *  ind_resposta
+ *      chave estrangeira da tabela procon_mensagem  
+ *  tipo
+ *      int 11 
+ */
+/* echo '<br />'. */ $ind_resposta = filter_input(INPUT_GET, 'ind_resposta', FILTER_SANITIZE_NUMBER_INT);
 

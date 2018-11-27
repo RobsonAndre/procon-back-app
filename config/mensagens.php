@@ -73,3 +73,14 @@ $msg[217] = array('status_code' => 217, 'status_message' => 'Impossível listar 
 $msg[218] = array('status_code' => 218, 'status_message' => 'Reclamação encontrada.', 'success' => true);
 $msg[219] = array('status_code' => 219, 'status_message' => 'Impossível encontrar a reclamação.', 'success' => false);
 
+//Mensagens
+$msg[300] = array('status_code' => 300, 'status_message' => 'Mensagem enviada com sucesso.', 'success' => true);
+$msg[301] = array('status_code' => 301, 'status_message' => 'Erro não foi possivel enviar a mensagem.', 'success' => false);
+$msg[302] = array('status_code' => 302, 'status_message' => 'Lista de mensagens gerada com sucesso.', 'success' => true);
+$msg[303] = array('status_code' => 303, 'status_message' => 'Erro não foi possivel gerar a lista de mensagens.', 'success' => false);
+$msg[304] = array('status_code' => 304, 'status_message' => 'Mensagem gerada com sucesso.', 'success' => true);
+$msg[305] = array('status_code' => 305, 'status_message' => 'Erro não foi possivel gerar a mensagens.', 'success' => false);
+$msg[306] = array('status_code' => 306, 'status_message' => 'Tipos gerado com sucesso.', 'success' => true);
+$msg[307] = array('status_code' => 307, 'status_message' => 'Erro não foi possivel gerar os tipos.', 'success' => false);
+$msg[308] = array('status_code' => 308, 'status_message' => 'Mensagem apagada com sucesso.', 'success' => true);
+$msg[309] = array('status_code' => 309, 'status_message' => 'Erro não foi possivel apagar a mensagem.', 'success' => false);

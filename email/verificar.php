@@ -13,18 +13,21 @@ if ($email) {
         $d = $Qry->arr($r);
         $uid  = $d[0]['uid'];
         $nome = $d[0]['nome'];
+        $output = $msg[150];    
+        
+        /** /
         if(emailVerifica($uid, $email, $nome)){
             $output = $msg[150];    
         }else{
             $output = $msg[151];
         }
-        
+        /**/
     }else{
         $output = $msg[152];
     }
     //Desconectando o banco
     $Conn->desconnect($c);
-    
+
 } else {
     $output = $msg[151];
 }
