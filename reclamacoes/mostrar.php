@@ -24,8 +24,27 @@
 		$d = $Qry->arr($r);
 		
 		/**/
-		$msg[218]['results']['uid']           = $d[0]['uid'];
-		$msg[218]['results']['status']        = $d[0]['status'];
+		$msg[218]['results']['uid']  = $d[0]['uid'];
+		$status                      = $d[0]['status'];
+                //Pegando a descricao do status
+                //pegando o status
+                $ss  = "SELECT status, descricao FROM ".PFIX."base_reclamacao_status WHERE indice = '$status'";
+		$rr  = $Qry->query($ss);
+		$dd = $Qry->arr($rr);
+		$msg[218]['results']['status'] = $dd[0]['status'];
+                $msg[218]['results']['status_code']   = $d[0]['status'];
+                $msg[218]['results']['status_descricao'] = $dd[0]['descricao'];                
+                if($status==51){
+                    /**/
+                    //recusada pegar a mensagem do atendente
+                    $sss  = "SELECT mensagem FROM ".PFIX."reclamacao_recusa WHERE ind_reclamacao = '$reclamacao' ORDER BY indice DESC LIMIT 0, 1";
+                    $rrr  = $Qry->query($sss);
+                    $ddd = $Qry->arr($rrr);
+                    $msg[218]['results']['status_descricao'] = $dd[0]['descricao'] .', '. utf8_encode($ddd[0]['mensagem']);                
+                    /**/
+                    
+                }
+                
 		$msg[218]['results']['data_registro'] = $d[0]['data_registro'];
 		$ind_estabelecimento = $d[0]['ind_estabelecimento'];
 		//verificando o estabelecimento
@@ -85,7 +104,7 @@
 		$r  = $Qry->query($s);
 		$dd = $Qry->arr($r);
 		for($j=0;$j<count($dd);$j++){
-			$msg[218]['results']['anexos'][$j] = $dd[$j]['anexo'];
+			$msg[218]['results']['anexos'][$j] = IMGPATH.$dd[$j]['anexo'];
 		}
 	
 		$output = $msg[218];

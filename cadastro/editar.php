@@ -47,10 +47,10 @@ if ($validate) {
     if($valEmail>0){
         if($valEmail===2){
             //troca o e-mail
-            $s = "UPDATE " . PFIX . "user_login SET nome='$nome', nascimento='$nasc', email='$email', verificado='0', sexo='$sexo', time='$time' WHERE uid = '$uid'";
+            $s = "UPDATE " . PFIX . "user_login SET nome='$nome', nascimento='$nasc', email='$email', verificado='0', sexo='$sexo', rg= '$rg', telefone='$telefone', time='$time' WHERE uid = '$uid'";
         }else{
             //mantem o e-mail
-            $s = "UPDATE " . PFIX . "user_login SET nome='$nome', sexo='$sexo', nascimento='$nasc', time='$time' WHERE uid = '$uid'";
+            $s = "UPDATE " . PFIX . "user_login SET nome='$nome', sexo='$sexo', nascimento='$nasc', rg= '$rg', telefone='$telefone', time='$time' WHERE uid = '$uid'";
         }
         $r = $Qry->query($s);
         //montando o novo result
@@ -65,7 +65,7 @@ if ($validate) {
             $cpf = substr($d[0]['cpf'], 0, 3) . '.***.***-' . substr($d[0]['cpf'], 9, 2);
             $email = $d[0]['email'];
             $verificado = $d[0]['verificado'];
-            $imagem = userImagem($uid);
+            $imagem = userImagem($uid, $Qry);
             //inserindo info no objeto
             $msg[122]['results']['uid'] = $uid;
             $msg[122]['results']['token'] = $token;
@@ -76,6 +76,8 @@ if ($validate) {
             $msg[122]['results']['sexo'] = $sexo;
             $msg[122]['results']['social'] = $social;
             $msg[122]['results']['cpf'] = $cpf;
+            $msg[122]['results']['rg'] = $rg;
+            $msg[122]['results']['tel'] = $telefone;
             $msg[122]['results']['verificado'] = $verificado ? true : false;
             $msg[122]['results']['cadastro'] = false;
             $output = $msg[122];

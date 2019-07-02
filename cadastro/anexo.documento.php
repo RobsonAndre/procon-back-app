@@ -1,12 +1,10 @@
 <?php
 
 //valida entrada
-if (!$documento || !$data || !$lado || !$imagem) {
+if (!$documento || !$lado || !$imagem) {
     $validate = false;
     if (!$documento) {
         $msg[127]['info'] = 'Documento inválido ou em branco.';
-    } elseif (!$data) {
-        $msg[127]['info'] = 'Data inválido ou em branco.';
     } elseif (!$lado) {
         $msg[127]['info'] = 'Lado em branco ou inválido.';
     } elseif (!$imagem) {

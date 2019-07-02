@@ -9,7 +9,7 @@ $msg[103] = array('status_code' => 103, 'status_message' => 'Token expirou.', 's
 //Login
 $msg[110] = array('status_code' => 110, 'status_message' => 'Autenticação realizada com sucesso.', 'success' => true);
 $msg[111] = array('status_code' => 111, 'status_message' => 'Senha incorreta.', 'success' => false);
-$msg[112] = array('status_code' => 112, 'status_message' => 'Usuário incorreto ou não cadastrado.', 'success' => false);
+$msg[112] = array('status_code' => 112, 'status_message' => 'Login incorreto ou usuário não cadastrado.', 'success' => false);
 
 //Cadastro
 $msg[120] = array('status_code' => 120, 'status_message' => 'Cadastro realizado, você já pode logar no App.', 'success' => true);
@@ -84,3 +84,11 @@ $msg[306] = array('status_code' => 306, 'status_message' => 'Tipos gerado com su
 $msg[307] = array('status_code' => 307, 'status_message' => 'Erro não foi possivel gerar os tipos.', 'success' => false);
 $msg[308] = array('status_code' => 308, 'status_message' => 'Mensagem apagada com sucesso.', 'success' => true);
 $msg[309] = array('status_code' => 309, 'status_message' => 'Erro não foi possivel apagar a mensagem.', 'success' => false);
+
+//Cadastro view
+$msg[320] = array('status_code' => 320, 'status_message' => 'Dados obtidos com sucesso.', 'success' => true);
+$msg[321] = array('status_code' => 321, 'status_message' => 'Erro não foi possivel obter os dados.', 'success' => false);
+
+//Cadastro Foto
+$msg[330] = array('status_code' => 330, 'status_message' => 'Foto Gravada/alterada com sucesso.', 'success' => true);
+$msg[331] = array('status_code' => 331, 'status_message' => 'Erro não foi possivel Gravada/alterada a foto.', 'success' => false);

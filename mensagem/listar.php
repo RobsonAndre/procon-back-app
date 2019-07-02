@@ -10,18 +10,24 @@ if ($uid) { //Para qual unidade do procon a mensagem deve ser enviada
     $l = $Qry->rows($r);
     $d = $Qry->arr($r);
     $msg[302]['qtde'] = $l;
+    /**/
     for ($i=0;$i<$l;$i++){
+        /**/
         $arr[$i]['id']          = $d[$i]['indice'];
         $arr[$i]['status']      = $d[$i]['status'];
+        
         $arr[$i]['status_info'] = statusMensagem($arr[$i]['status']);
-        $arr[$i]['mensagem']    = $d[$i]['mensagem'];
+        $arr[$i]['mensagem']    = utf8_encode($d[$i]['mensagem']);
         $arr[$i]['data']        = date('d-m-Y',$d[$i]['time']);
         $arr[$i]['hora']        = date('H',$d[$i]['time']).'h'.date('i',$d[$i]['time']);
         $arr[$i]['protocolo']   = $d[$i]['protocolo'];
         $arr[$i]['tipo']        = mascaraMsgTipo($d[$i]['ind_tipo'],$Qry);
         //Selecionando para qual procon foi direcionado a mensagem
         $arr[$i]['procon']      = pegarProcon($d[$i]['ind_procon'],$Qry);
+        /**/
+        
     }
+    /**/
     $msg[302]['results'] = $arr;
     $temp = $msg[302];
 } else {

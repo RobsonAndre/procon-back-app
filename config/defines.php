@@ -1,5 +1,7 @@
 <?php
-	//define
+	//Define
+
+        //banco
 	define("HOST", "mysql50.bs2.com.br");
 	define("USER", "papiroweb");
 	define("PASS", "Yae2Eep5");
@@ -14,4 +16,7 @@
 	define("COAST", "09");
 	
 	define("METH", "2a");
-?>
+        
+        //Paths
+        define("URLPATH", "http://papiroweb.com.br/integra/");
+        define("IMGPATH", URLPATH."imagens/upload/");

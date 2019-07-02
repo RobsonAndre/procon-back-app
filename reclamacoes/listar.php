@@ -11,9 +11,9 @@
 				".PFIX."rel_reclamacao_estabelecimento_tipo, 
 				".PFIX."base_reclamacao_tipo 
 			WHERE 
-				".PFIX."rel_reclamacao_estabelecimento_tipo.status > 0 
+				".PFIX."rel_reclamacao_estabelecimento_tipo.status >= 0 
 				AND
-				".PFIX."rel_reclamacao_estabelecimento_tipo.ind_estabelecimento = $ind_estabelecimento
+				".PFIX."rel_reclamacao_estabelecimento_tipo.ind_estabelecimento = '$ind_estabelecimento'
 				AND
 				".PFIX."rel_reclamacao_estabelecimento_tipo.ind_tipo = ".PFIX."base_reclamacao_tipo.indice
 			ORDER BY 
@@ -35,4 +35,3 @@
 	
 	//Desconectando o banco
 	$Conn->desconnect($c);
-?>

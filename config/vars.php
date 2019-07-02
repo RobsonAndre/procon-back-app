@@ -105,7 +105,7 @@ if(!$cpf){
  *  tipo
  *      string
  */
-/* echo '<br />'. */$imagem = filter_input(INPUT_GET, 'imagem', FILTER_SANITIZE_URL);
+/*echo '<br />'. */$imagem = filter_input(INPUT_GET, 'imagem', FILTER_SANITIZE_URL);
 
 /**
  * nasc
@@ -480,3 +480,18 @@ if(!$cpf){
  */
 /* echo '<br />'. */ $ind_resposta = filter_input(INPUT_GET, 'ind_resposta', FILTER_SANITIZE_NUMBER_INT);
 
+/**
+ *  rg
+ *      registro geral documento rg  
+ *  tipo
+ *      int 8 a 10 digitos 
+ */
+/* echo '<br />'. */ $rg = filter_input(INPUT_GET, 'rg', FILTER_SANITIZE_NUMBER_INT);
+
+/**
+ *  telefone celular
+ *      registro geral documento rg  
+ *  tipo
+ *      int 11 digitos 
+ */
+/*echo '<br />'. */ $telefone = filter_input(INPUT_GET, 'tel', FILTER_SANITIZE_NUMBER_INT);

@@ -20,7 +20,7 @@ if ($l) {
     $cpf = substr($d[0]['cpf'], 0, 3) . '.***.***-' . substr($d[0]['cpf'], 9, 2);
     $email = $d[0]['email'];
     $verificado = $d[0]['verificado'];
-    $imagem = userImagem($uid);
+    $foto = userImagem($uid,$Qry);
     $nasc = $d[0]['nascimento'] ? date('d-m-Y',$d[0]['nascimento']) : '';
     $sexo = $d[0]['sexo'];
     //Gerando o token
@@ -36,7 +36,7 @@ if ($l) {
     $msg[110]['results']['token'] = $token;
     $msg[110]['results']['email'] = $email;
     $msg[110]['results']['nome'] = $nome;
-    $msg[110]['results']['imagem'] = $imagem;
+    $msg[110]['results']['foto'] = $foto;
     $msg[110]['results']['social'] = $social;
     $msg[110]['results']['sexo'] = $sexo;
     $msg[110]['results']['nasc'] = $nasc;
