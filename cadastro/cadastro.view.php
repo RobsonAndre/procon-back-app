@@ -21,7 +21,7 @@ if ($l && ($code == 0 || $code == 1) ) {
     $msg[320]['results']['pessoal']['imagem'] = userImagem($d[0]['uid'],$Qry);
     $msg[320]['results']['pessoal']['social'] = $social;
     $msg[320]['results']['pessoal']['sexo'] = $d[0]['sexo'];
-    $msg[320]['results']['pessoal']['nasc'] = $d[0]['nascimento'] ? date('d-m-Y',$d[0]['nascimento']) : '';
+    $msg[320]['results']['pessoal']['nasc'] = $d[0]['nascimento'] ? date('Y-m-d',$d[0]['nascimento']) : '';
     $msg[320]['results']['pessoal']['cpf'] = substr($d[0]['cpf'], 0, 3) . '.***.***-' . substr($d[0]['cpf'], 9, 2);
     $msg[320]['results']['pessoal']['verificado'] = $d[0]['verificado'] ? true : false;
 }
@@ -54,7 +54,7 @@ if ($l && ($code == 0 || $code == 3) ) {
     for($i=0;$i<count($d);$i++){
         //inserindo info no objeto
         $msg[320]['results']['documento'][$i]['documento'] = $d[$i]['documento'];
-        $msg[320]['results']['documento'][$i]['data']      = date('d-m-Y',$d[$i]['time']);
+        $msg[320]['results']['documento'][$i]['data']      = date('Y-m-d',$d[$i]['time']);
         $msg[320]['results']['documento'][$i]['lado']      = $d[$i]['lado'];
         $msg[320]['results']['documento'][$i]['imagem']    = IMGPATH.$d[$i]['imagem'];
     }
@@ -71,7 +71,7 @@ if ($l && ($code == 0 || $code == 4) ) {
     for($i=0;$i<count($d);$i++){
         //inserindo info no objeto
         $msg[320]['results']['comprovante'][$i]['documento'] = $d[$i]['documento'];
-        $msg[320]['results']['comprovante'][$i]['data']      = date('d-m-Y',$d[$i]['time']);
+        $msg[320]['results']['comprovante'][$i]['data']      = date('Y-m-d',$d[$i]['time']);
         $msg[320]['results']['comprovante'][$i]['lado']      = $d[$i]['lado'];
         $msg[320]['results']['comprovante'][$i]['imagem']    = IMGPATH.$d[$i]['imagem'];
     }
@@ -88,7 +88,7 @@ if ($l && ($code == 0 || $code == 5) ) {
     for($i=0;$i<count($d);$i++){
         //inserindo info no objeto
         $msg[320]['results']['foto'][$i]['foto'] = $d[$i]['foto'];
-        $msg[320]['results']['foto'][$i]['data'] = date('d-m-Y',$d[$i]['time']);
+        $msg[320]['results']['foto'][$i]['data'] = date('Y-m-d',$d[$i]['time']);
     }
 }elseif($code == 0 || $code == 5){
     $msg[320]['results']['foto'] = false;

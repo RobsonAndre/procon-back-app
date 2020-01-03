@@ -7,6 +7,7 @@ function enviarEmail($email, $nome, $msg, $ass) {
     require("../assets/PHPMailer-5.2.21/class.smtp.php");
     // Inicia a classe PHPMailer
     $mail = new PHPMailer();
+    
     // Define que a mensagem será enviada com o protocolo SMTP
     $mail->isSMTP();
     // Endereço do servidor SMTP (utilizando autenticação)

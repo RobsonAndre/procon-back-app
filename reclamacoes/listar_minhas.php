@@ -8,6 +8,7 @@
             $s = "	SELECT 
 				".PFIX."reclamacao.indice AS uid,
 				".PFIX."reclamacao.status,
+				".PFIX."reclamacao.mensagem,
 				".PFIX."reclamacao.ind_estabelecimento,
 				".PFIX."reclamacao.ind_tipo,
 				".PFIX."reclamacao.tabela_reclamacao,
@@ -23,6 +24,7 @@
             $s = "	SELECT 
 				".PFIX."reclamacao.indice AS uid,
 				".PFIX."reclamacao.status,
+				".PFIX."reclamacao.mensagem,
 				".PFIX."reclamacao.ind_estabelecimento,
 				".PFIX."reclamacao.ind_tipo,
 				".PFIX."reclamacao.tabela_reclamacao,
@@ -48,6 +50,7 @@
 	
 	/**/
 	for($i = 0; $i<count($d);$i++){
+            
                 $ind_reclamacao = $d[$i]['uid'];
 		$msg[216]['results']['list'][$i]['uid'] = $d[$i]['uid'];
 		$status = $d[$i]['status'];
@@ -56,7 +59,7 @@
 		$rr  = $Qry->query($ss);
 		$dd = $Qry->arr($rr);
 		$msg[216]['results']['list'][$i]['status'] = $dd[0]['status'];
-                $msg[216]['results']['list'][$i]['status_descricao'] = utf8_encode($dd[0]['descricao']);                
+                $msg[216]['results']['list'][$i]['status_descricao'] = utf8_encode($dd[0]['descricao']) .' '. utf8_encode($d[$i]['mensagem']);                
                 if($status==51){
                     /**/
                     //recusada pegar a mensagem do atendente
@@ -81,7 +84,7 @@
 		$s  = "SELECT tipo FROM ".PFIX."base_reclamacao_tipo WHERE indice = '$ind_tipo'";
 		$r  = $Qry->query($s);
 		$dd = $Qry->arr($r);
-		$msg[216]['results']['list'][$i]['reclamacao'] = $dd[0]['tipo'];
+		$msg[216]['results']['list'][$i]['reclamacao'] = utf8_encode($dd[0]['tipo']);
 		//$msg[216]['results']['list'][$i]['s'] = $s;
 		//Detalhes da reclamacao
 		$tabela = $d[$i]['tabela_reclamacao'];
@@ -90,8 +93,8 @@
 		$s = "	SELECT 
 					banco, 
 					agencia, 
-					from_unixtime(data) AS data_ocorrencia, 
-					espera, 
+					/*from_unixtime(data) AS data_ocorrencia, */
+					/*espera, */
 					atendido 
 				FROM 
 					".$tabela." 
@@ -100,10 +103,10 @@
 			 ";
 		$r  = $Qry->query($s);
 		$dd = $Qry->arr($r);
-		$msg[216]['results']['list'][$i]['banco']           = $dd[0]['banco'];
-		$msg[216]['results']['list'][$i]['agencia']         = $dd[0]['agencia'];
-		$msg[216]['results']['list'][$i]['data_ocorrencia'] = $dd[0]['data_ocorrencia'];
-		$msg[216]['results']['list'][$i]['tempo_espera']    = $dd[0]['espera'];
+		//$msg[216]['results']['list'][$i]['banco']           = $dd[0]['banco'];
+		//$msg[216]['results']['list'][$i]['agencia']         = $dd[0]['agencia'];
+		//$msg[216]['results']['list'][$i]['data_ocorrencia'] = $dd[0]['data_ocorrencia'];
+		//$msg[216]['results']['list'][$i]['tempo_espera']    = $dd[0]['espera'];
 		//$msg[216]['results']['list'][$i]['atendido']        = $dd[0]['atendido'];
 		
 		$s = "	SELECT 

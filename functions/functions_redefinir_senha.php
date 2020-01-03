@@ -6,7 +6,6 @@ function redefinirSenha($uid, $email, $nome) {
       echo '<br />email: '.$email;
       echo '<br />nome: '.$nome;
     /**/
-    
     $time     = base64_encode(time());
     $codUid   = base64_encode($uid);
     $codEmail = sha1($email);

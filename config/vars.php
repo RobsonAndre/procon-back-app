@@ -280,7 +280,7 @@ if(!$cpf){
  *  exemplo 
  *      01-01-2018 (dd-mm-aaaa)
  */
-/* echo '<br />'. */ $data = filter_input(INPUT_GET, 'data', FILTER_SANITIZE_STRING); 
+/* echo '<br />'. */ $data = ajustaData(filter_input(INPUT_GET, 'data', FILTER_SANITIZE_STRING)); 
 
 /**
  *  hora

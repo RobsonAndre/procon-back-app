@@ -8,13 +8,14 @@ if ($id) { //Para qual unidade do procon a mensagem deve ser enviada
     $s = "SELECT * FROM " . PFIX . "procon_mensagem WHERE uid = '$uid' AND indice = '$id' AND status > 0 ";
     $r = $Qry->query($s);
     $l = $Qry->rows($r);
+    
     if($l){
         $d = $Qry->arr($r);
 
         $msg[304]['id']          = $d[0]['indice'];
         $msg[304]['status']      = $d[0]['status'];
         $msg[304]['status_info'] = statusMensagem($d[0]['status']);
-        $msg[304]['mensagem']    = $d[0]['mensagem'];
+        $msg[304]['mensagem']    = utf8_encode($d[0]['mensagem']);
         $msg[304]['data']        = date('d-m-Y',$d[0]['time']);
         $msg[304]['hora']        = date('H',$d[0]['time']).'h'.date('i',$d[0]['time']);
         $msg[304]['protocolo']   = $d[0]['protocolo'];

@@ -7,7 +7,7 @@ $msg[102] = array('status_code' => 102, 'status_message' => 'Token Ok.', 'succes
 $msg[103] = array('status_code' => 103, 'status_message' => 'Token expirou.', 'success' => false);
 
 //Login
-$msg[110] = array('status_code' => 110, 'status_message' => 'Autenticação realizada com sucesso.', 'success' => true);
+$msg[110] = array('status_code' => 110, 'status_message' => 'Autenticacao realizada com sucesso.', 'success' => true);
 $msg[111] = array('status_code' => 111, 'status_message' => 'Senha incorreta.', 'success' => false);
 $msg[112] = array('status_code' => 112, 'status_message' => 'Login incorreto ou usuário não cadastrado.', 'success' => false);
 
@@ -64,7 +64,7 @@ $msg[201] = array('status_code' => 201, 'status_message' => 'Impossível gerar a
 //Reclamacoes
 $msg[210] = array('status_code' => 210, 'status_message' => 'Lista de reclamações gerada.', 'success' => true);
 $msg[211] = array('status_code' => 211, 'status_message' => 'Impossível gerar a lista de reclamações.', 'success' => false);
-$msg[212] = array('status_code' => 212, 'status_message' => 'Reclamações gravada.', 'success' => true);
+$msg[212] = array('status_code' => 212, 'status_message' => 'Reclamação gravada.', 'success' => true);
 $msg[213] = array('status_code' => 213, 'status_message' => 'Impossível gravar a reclamação.', 'success' => false);
 $msg[214] = array('status_code' => 214, 'status_message' => 'Reclamações contadas.', 'success' => true);
 $msg[215] = array('status_code' => 215, 'status_message' => 'Impossível contar as reclamações.', 'success' => false);

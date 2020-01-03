@@ -1,12 +1,14 @@
 <?php
 	//definindo a tabela -> tipo de relacamcao	
-	if($ind_estabelecimento == 1){ //verifica o estabelecimento
-		if($ind_tipo == 1){	//verifica o tipo da reclamacao
+	if($ind_estabelecimento >= 1){ //verifica o estabelecimento
+		if($ind_tipo >= 1){	//verifica o tipo da reclamacao
 			$tabela = PFIX.'reclamacao_banco';
 			if(!$banco){
-				$msg[213]['info'] = 'Campo Banco não preenchido';
-				$temp = $msg[213];
-			}elseif(!$data){
+                            $msg[213]['info'] = 'Campo Banco não preenchido';
+                            $temp = $msg[213];
+			}
+                        /** /
+                        elseif(!$data){
 				$msg[213]['info'] = 'Campo Data não preenchido';
 				$temp = $msg[213];
 			}elseif(!$hora){
@@ -16,20 +18,22 @@
 				$msg[213]['info'] = 'Campo Tempo de espera não preenchido';
 				$temp = $msg[213];
 			}
-                        /** /
                         elseif(!$atendido){
 				$msg[213]['info'] = 'Campo Atendido não preenchido';
 				$temp = $msg[213];
 			}
                         /**/
                         elseif(!$queixa){
-                         
 				$msg[213]['info'] = 'Campo Queixa não preenchido';
 				$temp = $msg[213];
-			}elseif(!$anexos){
+			}
+                        /** /
+                        elseif(!$anexos){
 				$msg[213]['info'] = 'Campo Anexo é obrigatório';
 				$temp = $msg[213];
-			}else{
+			}/**/
+                        else{
+                         
 				
 				//montar o timestamp
 				$tdata = montaTimestamp($data,$hora);
