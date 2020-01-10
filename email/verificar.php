@@ -15,7 +15,7 @@ if ($email) {
         $nome = $d[0]['nome'];
         $output = $msg[150];    
         
-        /** /
+        /**/
         if(emailVerifica($uid, $email, $nome)){
             $output = $msg[150];    
         }else{

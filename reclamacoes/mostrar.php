@@ -10,6 +10,7 @@ $s = "	SELECT
 				" . PFIX . "reclamacao.indice AS uid,
 				" . PFIX . "reclamacao.status,
 				" . PFIX . "reclamacao.mensagem,
+				" . PFIX . "reclamacao.protocolo,
 				" . PFIX . "reclamacao.ind_estabelecimento,
 				" . PFIX . "reclamacao.ind_tipo,
 				" . PFIX . "reclamacao.tabela_reclamacao,
@@ -38,13 +39,14 @@ if ($l) {
     $msg[218]['results']['status']           = $dd[0]['status'];
     $msg[218]['results']['status_code']      = $d[0]['status'];
     $msg[218]['results']['status_descricao'] = utf8_encode($dd[0]['descricao']) .' '. utf8_encode($mensagem);
+    $msg[218]['results']['protocolo']        = $dd[0]['protocolo'];
     if ($status == 51) {
         /**/
         //recusada pegar a mensagem do atendente
         $sss = "SELECT mensagem FROM " . PFIX . "reclamacao_recusa WHERE ind_reclamacao = '$reclamacao' ORDER BY indice DESC LIMIT 0, 1";
         $rrr = $Qry->query($sss);
         $ddd = $Qry->arr($rrr);
-        $msg[218]['results']['status_descricao'] = utf8_encode($dd[0]['descricao']) . ', ' . utf8_encode($ddd[0]['mensagem']);
+        $msg[218]['results']['status_descricao'] = utf8_encode($dd[0]['descricao']) . ' ' . utf8_encode($ddd[0]['mensagem']);
         /**/
     }else{
         /** /

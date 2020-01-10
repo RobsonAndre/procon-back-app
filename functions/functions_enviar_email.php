@@ -32,6 +32,9 @@ function enviarEmail($email, $nome, $msg, $ass) {
     $mail->Subject = $ass;
     $mail->Body = $mensagemHTML;
     $mail->AltBody = trim(strip_tags($mensagemHTML));
+    $res = $mail->Send();
     
-    return $mail->Send();
+    return $res; 
 }
+//Teste
+//enviarEmail('robson_x@yahoo.com.br', 'Robson André', 'Mensagem de teste', 'Assunto');

@@ -10,6 +10,7 @@ $msg[103] = array('status_code' => 103, 'status_message' => 'Token expirou.', 's
 $msg[110] = array('status_code' => 110, 'status_message' => 'Autenticacao realizada com sucesso.', 'success' => true);
 $msg[111] = array('status_code' => 111, 'status_message' => 'Senha incorreta.', 'success' => false);
 $msg[112] = array('status_code' => 112, 'status_message' => 'Login incorreto ou usuário não cadastrado.', 'success' => false);
+$msg[113] = array('status_code' => 113, 'status_message' => 'Acesso bloqueado, por favor entrar em contato com o Procon através do telefone 151.', 'success' => false);
 
 //Cadastro
 $msg[120] = array('status_code' => 120, 'status_message' => 'Cadastro realizado, você já pode logar no App.', 'success' => true);
@@ -35,7 +36,7 @@ $msg[141] = array('status_code' => 141, 'status_message' => 'Impossivel gerar o 
 $msg[142] = array('status_code' => 142, 'status_message' => 'Lei gerada com sucesso.', 'success' => true);
 
 //Documento (Termo de Uso ou Politica de Privacidade)
-$msg[150] = array('status_code' => 150, 'status_message' => 'E-mail enviado com sucesso.', 'success' => true);
+$msg[150] = array('status_code' => 150, 'status_message' => 'Foi enviado um E-mail para você, verifique sua caixa de entrada e de spam.', 'success' => true);
 $msg[151] = array('status_code' => 151, 'status_message' => 'E-mail em invalido ou em branco.', 'success' => false);
 $msg[152] = array('status_code' => 152, 'status_message' => 'Impossivel enviar o e-mail, tente mais tarde.', 'success' => false);
 
