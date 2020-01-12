@@ -89,12 +89,10 @@
 		//Detalhes da reclamacao
 		$tabela = $d[$i]['tabela_reclamacao'];
 		$indice = $d[$i]['uid'];
-		
+		/** /
 		$s = "	SELECT 
 					banco, 
 					agencia, 
-					/*from_unixtime(data) AS data_ocorrencia, */
-					/*espera, */
 					atendido 
 				FROM 
 					".$tabela." 
@@ -108,7 +106,7 @@
 		//$msg[216]['results']['list'][$i]['data_ocorrencia'] = $dd[0]['data_ocorrencia'];
 		//$msg[216]['results']['list'][$i]['tempo_espera']    = $dd[0]['espera'];
 		//$msg[216]['results']['list'][$i]['atendido']        = $dd[0]['atendido'];
-		
+		/**/
 		$s = "	SELECT 
 					queixa 
 				FROM 

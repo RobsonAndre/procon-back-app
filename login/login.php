@@ -5,9 +5,9 @@ $Qry = new Qry;
 $c = $Conn->connect(HOST, USER, PASS, DB);
 //SQL
 if ($email) {
-    $s = "SELECT uid, nome, sexo, nascimento, cpf, email, verificado FROM " . PFIX . "user_login WHERE email='$email' AND senha='$senha' ";
+    $s = "SELECT status, uid, nome, sexo, nascimento, cpf, email, verificado FROM " . PFIX . "user_login WHERE email='$email' AND senha='$senha' ";
 } else {
-    $s = "SELECT uid, nome, sexo, nascimento, cpf, email, verificado FROM " . PFIX . "user_login WHERE cpf='$cpf' AND senha='$senha' ";
+    $s = "SELECT status, uid, nome, sexo, nascimento, cpf, email, verificado FROM " . PFIX . "user_login WHERE cpf='$cpf' AND senha='$senha' ";
 }
 $r = $Qry->query($s);
 $l = $Qry->rows($r);
@@ -46,6 +46,7 @@ if ($l) {
         /**/
         $output = $msg[110];
     }else{
+        $msg[113]['status']= $d[0]['status'];
         $output = $msg[113];
     }
 } else {
@@ -73,7 +74,9 @@ if ($l) {
     //guardando a senha sem criptografia
     $senha = filter_input(INPUT_GET, 'senha', FILTER_SANITIZE_NUMBER_INT);
     //inserindo o ERROR no acesso_log_error
-    $s = "INSERT INTO " . PFIX . "acesso_log_error (ip, email, senha, time) VALUES ('$ip', '$email', '$senha', '$time')";
+    
+    $login = $email ? $email : $cpf;
+    $s = "INSERT INTO " . PFIX . "acesso_log_error (ip, email, senha, time) VALUES ('$ip', '$login', '$senha', '$time')";
     $r = $Qry->query($s);
 }
 //Desconectando o banco
