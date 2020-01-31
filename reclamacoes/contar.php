@@ -21,8 +21,8 @@ if($l){
         $ss = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time > '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
         $rr = $Qry->query($ss);
         $ll = $Qry->rows($rr);
-        $nova = $ll ? true : false;
-        $msg[214]['results']['incompleta']['ss'] .= $ss.'-';
+        $nova = $ll ? $nova : true;
+        $msg[214]['results']['incompleta']['nova'] = $nova;
     }
 }
 // Espera
@@ -41,8 +41,8 @@ if($l){
         $ss = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time > '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
         $rr = $Qry->query($ss);
         $ll = $Qry->rows($rr);
-        $nova = $ll ? true : false;
-        $msg[214]['results']['espera']['ss'] .= $ss.'-';
+        $nova = $ll ? $nova : true;
+        $msg[214]['results']['espera']['nova'] = $nova;
     }
 }
 // Aberta
@@ -61,8 +61,8 @@ if($l){
         $ss = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time > '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
         $rr = $Qry->query($ss);
         $ll = $Qry->rows($rr);
-        $nova = $ll ? true : false;
-        $msg[214]['results']['aberta']['ss'] .= $ss.'-';
+        $nova = $ll ? $nova : true;
+        $msg[214]['results']['aberta']['nova'] = $nova;
     }
 }
 // Pendentes
@@ -81,8 +81,8 @@ if($l){
         $ss = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time > '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
         $rr = $Qry->query($ss);
         $ll = $Qry->rows($rr);
-        $nova = $ll ? true : false;
-        $msg[214]['results']['pendente']['ss'] .= $ss.'-';
+        $nova = $ll ? $nova : true;
+        $msg[214]['results']['pendente']['nova'] = $nova;
     }
 }
 // Em Processamento
@@ -101,8 +101,8 @@ if($l){
         $ss = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time > '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
         $rr = $Qry->query($ss);
         $ll = $Qry->rows($rr);
-        $nova = $ll ? true : false;
-        $msg[214]['results']['processamento']['ss'] .= $ss.'-';
+        $nova = $ll ? $nova : true;
+        $msg[214]['results']['processamento']['nova'] = $nova;
     }
 }// Recusada
 // Foi recebida pelo procon mas contem erros que impedem a abertura de processo
@@ -120,8 +120,8 @@ if($l){
         $ss = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time > '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
         $rr = $Qry->query($ss);
         $ll = $Qry->rows($rr);
-        $nova = $ll ? true : false;
-        $msg[214]['results']['recusada']['ss'] .= $ss.'-';
+        $nova = $ll ? $nova : true;
+        $msg[214]['results']['recusada']['nova'] = $nova;
     }
 }
 // Finalizada
@@ -140,8 +140,8 @@ if($l){
         $ss = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time > '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
         $rr = $Qry->query($ss);
         $ll = $Qry->rows($rr);
-        $nova = $ll ? true : false;
-        $msg[214]['results']['finalizada']['ss'] .= $ss.'-';
+        $nova = $ll ? $nova : true;
+        $msg[214]['results']['finalizada']['nova'] = $nova;
     }
 }// Cancelada
 // Cancelada pelo usuario
@@ -152,12 +152,13 @@ $msg[214]['results']['cancelada']['code'] = 99;
 $msg[214]['results']['cancelada']['qtde'] = $l;
 //verificando se existem novidade no processo
 //Canceladas nao tem mais acao do procon nao verificar
+$msg[214]['results']['cancelada']['nova'] = false;
 // Total
 // Soma de todas os status
 $msg[214]['results']['registro']['code'] = 100;
 $msg[214]['results']['registro']['qtde'] = $msg[214]['results']['incompleta']['qtde'] + $msg[214]['results']['espera']['qtde'] + $msg[214]['results']['aberta']['qtde'] + $msg[214]['results']['pendente']['qtde'] + $msg[214]['results']['processamento']['qtde'] + $msg[214]['results']['recusada']['qtde'] + $msg[214]['results']['finalizada']['qtde'] + $msg[214]['results']['cancelada']['qtde'];
 //informacao se existe novidades no processo
-$msg[214]['novas'] = $nova ? 1 : 0;
+$msg[214]['novas'] = $nova ? true : false;
 
 $output = $msg[214];
 

@@ -3,10 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/xampp/htdocs/integra/reclamacoes/index.php</file>
-            <file>file:/C:/xampp/htdocs/integra/reclamacoes/mostrar.php</file>
-            <file>file:/C:/xampp/htdocs/integra/reclamacoes/listar_minhas.php</file>
+            <file>file:/C:/xampp/htdocs/integra/config/vars.php</file>
+            <file>file:/C:/xampp/htdocs/integra/functions/functions.php</file>
             <file>file:/C:/xampp/htdocs/integra/reclamacoes/contar.php</file>
+            <file>file:/C:/xampp/htdocs/integra/functions/functions_grava_log.php</file>
+            <file>file:/C:/xampp/htdocs/integra/functions/functions_pegar_procon.php</file>
+            <file>file:/C:/xampp/htdocs/integra/config/config.php</file>
         </group>
     </open-files>
 </project-private>

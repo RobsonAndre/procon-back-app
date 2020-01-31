@@ -14,4 +14,4 @@ setlocale(LC_TIME, 'pt_BR', 'pt_BR.utf-8', 'pt_BR.utf-8', 'portuguese');
  *  data:
  *      13/01/2020 10h07
  */
-date_default_timezone_set('America/Fortaleza');
+// resolvido pela bs2 em 22/01/2020 as 16h38 //date_default_timezone_set('America/Fortaleza');

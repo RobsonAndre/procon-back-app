@@ -21,3 +21,4 @@ include("../functions/functions_status_mensagem.php");
 include("../functions/functions_mascara_mensagem_tipo.php");
 include("../functions/functions_ajusta_data.php");
 include("../functions/functions_valida_cadastro.php");
+include("../functions/functions_grava_log.php");

@@ -94,6 +94,7 @@ if ($l) {
     $s = "INSERT INTO ".PFIX."reclamacao_processo_view (ind_reclamacao, uid, time)  VALUES ('$reclamacao', '$uid', '$time') ";
     $r = $Qry->query($s);
     
+    //$msg[218]['s']=$s;
     $output = $msg[218];
 } else {
     $output = $msg[219];

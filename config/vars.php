@@ -9,6 +9,15 @@
  */
 $ip = $_SERVER['REMOTE_ADDR'];
 /**
+ *  url
+ *      url completa que o 
+ *  tipo
+ *      string / uri
+ *  formato
+ *      http://papiroweb.com.br/integra/endPoint/?action=4&token=serffhbd54tee435gh567e9PQ==&code=99&
+ */
+$url = 'http://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'];
+/**
  *  time
  *      data e hora no formato timestamp
  *  tipo

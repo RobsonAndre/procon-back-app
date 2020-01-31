@@ -77,14 +77,22 @@ for($i = 0; $i<count($d);$i++){
     $dd = $Qry->arr($rr);
     $msg[216]['results']['list'][$i]['queixa'] = $dd[0]['queixa'];
     //Verificando se houve alteracao desde da ultima visualização - novas
-    $s = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time > '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
-    $r = $Qry->query($s);
-    $l = $Qry->rows($r);
-    $msg[216]['results']['list'][$i]['nova'] = $l ? false : true;
+    if($status == 99){
+        // cancelada pelo usuario nao pode ser alterada pelo procon
+        //$msg[216]['results']['list'][$i]['s'] = $status;
+        $msg[216]['results']['list'][$i]['nova'] = false;
+    }else{
+        //verificando se o procon alterou o processo 
+        $s = "SELECT indice FROM ".PFIX."reclamacao_processo_view WHERE ind_reclamacao = '$ind_reclamacao' AND uid = '$uid' AND time < '$tme_procon' ORDER BY indice DESC LIMIT 0, 1 ";
+        $r = $Qry->query($s);
+        $l = $Qry->rows($r);
+        $msg[216]['results']['list'][$i]['nova'] = $l ? false : true;
+        //$msg[216]['results']['list'][$i]['s'] = $s;
+    }
     if(!$tem_nova && $l){
         $tem_nova = true;
     }
-    $msg[216]['results']['nova'] = $tem_nova;
 }
+$msg[216]['results']['nova'] = $tem_nova;
 $output = $msg[216];
 $Conn->desconnect($c);
